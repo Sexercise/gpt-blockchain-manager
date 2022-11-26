@@ -29,3 +29,29 @@ export const SuperTokensConfig: TypeInput = {
     // this is the location of the SuperTokens core.
     connectionURI: String(process.env.URI),
     apiKey: String(process.env.KEY),
+  },
+  appInfo: {
+    appName: "Blockcahin Terminal",
+    apiDomain: getApiDomain(),
+    websiteDomain: getWebsiteDomain(),
+    apiBasePath: "/api/auth",
+    websiteBasePath: "/auth",
+  },
+  // recipeList contains all the modules that you want to
+  recipeList: [
+    ThirdPartyEmailPassword.init({
+      providers: [
+        ThirdPartyEmailPassword.Google({
+          clientId: String(process.env.CLIENT_ID),
+          clientSecret: String(process.env.CLIENT_SECRET),
+        }),
+        ThirdPartyEmailPassword.Github({
+          clientId: String(process.env.L_GITHUB_CLIENT),
+          clientSecret: String(process.env.L_GITHUB_SECRET),
+        }),
+      ],
+    }),
+    Dashboard.init(),
+    Session.init(),
+  ],
+};
