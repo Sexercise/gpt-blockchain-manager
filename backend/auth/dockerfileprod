@@ -6,4 +6,12 @@ COPY package.json ./
 
 RUN npm install -g ts-node
 
-RUN npm inst
+RUN npm install
+
+COPY . .
+
+EXPOSE 3001
+
+CMD [ "npm", "run" , "prod" ]
+
+
