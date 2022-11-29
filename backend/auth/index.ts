@@ -37,4 +37,7 @@ app.use(
   })
 );
 // This exposes all the APIs from SuperTokens to the client.
-app.u
+app.use(middleware());
+
+// sessionIno API requires session verification
+app.get("/sessioninfo", verifySession(), async (req: Sess
