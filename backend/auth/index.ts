@@ -7,4 +7,6 @@ import { verifySession } from "supertokens-node/recipe/session/framework/express
 import {
   middleware,
   errorHandler,
-  Sessi
+  SessionRequest,
+} from "supertokens-node/framework/express";
+import { getWebsiteDomain, SuperTokensConfig } from "./con
