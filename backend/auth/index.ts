@@ -15,4 +15,9 @@ import { executeCommand } from "./callBlockchainGPT";
 import bodyParser from "body-parser";
 
 
-supertokens.ini
+supertokens.init(SuperTokensConfig);
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json(
