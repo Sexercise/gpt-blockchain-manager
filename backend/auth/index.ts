@@ -32,4 +32,9 @@ app.use(
 );
 
 app.use(
-  hel
+  helmet({
+      contentSecurityPolicy: false,
+  })
+);
+// This exposes all the APIs from SuperTokens to the client.
+app.u
