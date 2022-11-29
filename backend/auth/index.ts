@@ -20,4 +20,9 @@ supertokens.init(SuperTokensConfig);
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json(
+app.use(bodyParser.json());
+
+app.use(
+  cors({
+    origin: getWebsiteDomain(),
+    allowedHeaders: ["content-type", ...supertoken
