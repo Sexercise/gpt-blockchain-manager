@@ -25,4 +25,11 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: getWebsiteDomain(),
-    allowedHeaders: ["content-type", ...supertoken
+    allowedHeaders: ["content-type", ...supertokens.getAllCORSHeaders()],
+    methods: ["GET", "PUT", "POST", "DELETE"],
+    credentials: true,
+  })
+);
+
+app.use(
+  hel
