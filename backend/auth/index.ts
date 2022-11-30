@@ -49,4 +49,9 @@ app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
   });
 });
 
-//refresh session and re-generate to
+//refresh session and re-generate token
+app.get("/session/refresh");
+
+
+app.get("/check_login", verifySession(), (req: SessionRequest, res) => {
+  if (re
