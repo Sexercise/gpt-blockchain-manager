@@ -40,4 +40,8 @@ app.use(
 app.use(middleware());
 
 // sessionIno API requires session verification
-app.get("/sessioninfo", verifySession(), async (req: Sess
+app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
+  let session = req.session;
+  res.send({
+    sessionHandle: session!.getHandle(),
+    userId: se
