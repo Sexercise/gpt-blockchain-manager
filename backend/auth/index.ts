@@ -44,4 +44,9 @@ app.get("/sessioninfo", verifySession(), async (req: SessionRequest, res) => {
   let session = req.session;
   res.send({
     sessionHandle: session!.getHandle(),
-    userId: se
+    userId: session!.getUserId(),
+    accessTokenPayload: session!.getAccessTokenPayload(),
+  });
+});
+
+//refresh session and re-generate to
