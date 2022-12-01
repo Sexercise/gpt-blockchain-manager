@@ -54,4 +54,8 @@ app.get("/session/refresh");
 
 
 app.get("/check_login", verifySession(), (req: SessionRequest, res) => {
-  if (re
+  if (req.session !== undefined) {
+    let userId = req.session.getUserId();
+    console.log("connected user ", userId);
+
+    
