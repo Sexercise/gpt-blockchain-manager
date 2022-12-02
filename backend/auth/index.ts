@@ -58,4 +58,10 @@ app.get("/check_login", verifySession(), (req: SessionRequest, res) => {
     let userId = req.session.getUserId();
     console.log("connected user ", userId);
 
-    
+    res.json({ loggedIn: true });
+  } else {
+    res.json({ loggedIn: false });
+  }
+});
+
+app.post("/gpt-test", verifySessio
