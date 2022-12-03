@@ -66,4 +66,8 @@ app.get("/check_login", verifySession(), (req: SessionRequest, res) => {
 
 app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
   const input = req.body.command;
-  if (req.session !== undefi
+  if (req.session !== undefined) {
+    let userId = req.session.getUserId();
+    console.log("connected user ", userId);
+    try {
+    
