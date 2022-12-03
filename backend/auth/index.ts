@@ -64,4 +64,6 @@ app.get("/check_login", verifySession(), (req: SessionRequest, res) => {
   }
 });
 
-app.post("/gpt-test", verifySessio
+app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
+  const input = req.body.command;
+  if (req.session !== undefi
