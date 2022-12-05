@@ -70,4 +70,7 @@ app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
     let userId = req.session.getUserId();
     console.log("connected user ", userId);
     try {
-    
+      const response = await executeCommand(input);
+      res.send(response);
+    } catch (error: any) {
+      res.status(500)
