@@ -73,4 +73,11 @@ app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
       const response = await executeCommand(input);
       res.send(response);
     } catch (error: any) {
-      res.status(500)
+      res.status(500).json({ error: error.message });
+    }
+  } else {
+    res.json({ loggedIn: false });
+  }
+});
+// app.use('/api', app);
+
