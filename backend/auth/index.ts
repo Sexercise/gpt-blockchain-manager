@@ -81,3 +81,7 @@ app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
 });
 // app.use('/api', app);
 
+app.use(errorHandler());
+
+app.use((err:any, req:any, res:any, next:any) => {
+    res.status(500).send("Internal err
