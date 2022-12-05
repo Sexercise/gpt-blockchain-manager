@@ -84,4 +84,7 @@ app.post("/gpt-test", verifySession(), async (req: SessionRequest, res) => {
 app.use(errorHandler());
 
 app.use((err:any, req:any, res:any, next:any) => {
-    res.status(500).send("Internal err
+    res.status(500).send("Internal error: " + err.message);
+});
+
+app.listen(3001, () => console.log(`API Server listening on port 3001`));
