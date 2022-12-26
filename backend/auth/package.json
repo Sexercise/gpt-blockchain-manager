@@ -21,4 +21,8 @@
         "path": "^0.12.7",
         "supertokens-node": "latest",
         "ts-node-dev": "^2.0.0",
-        "typesc
+        "typescript": "^4.7.2"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.12",
+        "@types/morgan":
