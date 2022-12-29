@@ -29,4 +29,7 @@
         "@types/node": "^16.11.38",
         "nodemon": "^2.0.16"
     },
-    "key
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
