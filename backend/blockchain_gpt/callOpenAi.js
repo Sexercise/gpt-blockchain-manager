@@ -5,4 +5,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const configuration = new Configuration({
-  apiKey
+  apiKey: process.env.API_KEY,
+});
+
+
+
+
+const openai = new OpenAIApi(configuration);
+
+
+let callOpenAi = async (prompt)
