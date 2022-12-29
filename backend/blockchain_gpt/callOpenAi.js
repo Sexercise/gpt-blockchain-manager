@@ -14,4 +14,8 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 
-let callOpenAi = async (prompt)
+let callOpenAi = async (prompt) => {
+
+  prompt = preprocess(prompt);
+ console.log(prompt);
+  const completion = await openai.createCh
