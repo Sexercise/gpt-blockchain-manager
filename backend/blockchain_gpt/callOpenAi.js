@@ -22,4 +22,8 @@ let callOpenAi = async (prompt) => {
     model: "gpt-4",//"gpt-3.5-turbo",
     messages: [
       
-      { role: "assistant", content:
+      { role: "assistant", content: readContentfromFile('assistant.txt')},
+      { role: "user",
+      content: prompt },
+    ],
+  })
