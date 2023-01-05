@@ -26,4 +26,11 @@ let callOpenAi = async (prompt) => {
       { role: "user",
       content: prompt },
     ],
-  })
+  });
+
+
+  return completion.data.choices[0].message.content;
+}
+
+let preprocess = (prompt) => {
+  return prom
