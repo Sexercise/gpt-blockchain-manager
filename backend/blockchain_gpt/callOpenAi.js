@@ -33,4 +33,8 @@ let callOpenAi = async (prompt) => {
 }
 
 let preprocess = (prompt) => {
-  return prom
+  return prompt + readContentfromFile("preprocess.txt")
+}
+
+let readContentfromFile = (filename) => {
+  return fs.readFi
