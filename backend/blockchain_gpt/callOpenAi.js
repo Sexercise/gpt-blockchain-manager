@@ -37,4 +37,8 @@ let preprocess = (prompt) => {
 }
 
 let readContentfromFile = (filename) => {
-  return fs.readFi
+  return fs.readFileSync(filename, 'utf8');
+}
+
+module.exports = callOpenAi;
+
