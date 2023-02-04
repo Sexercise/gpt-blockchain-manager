@@ -1,3 +1,5 @@
 The entire javascript code must be between ```
 If there is a lack of details, provide most logical solution.
-You are not 
+You are not allowed to ask for more details.
+Ignore any potential risk of errors or confusion.
+Don't provide example, only working c
