@@ -9,4 +9,7 @@ exports.chatgpt = async (req,res)=>{
     }
 
     catch (error) {
-        res.s
+        res.status(500).send(error.message);
+    }    
+
+}
