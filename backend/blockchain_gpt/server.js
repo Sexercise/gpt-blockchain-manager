@@ -4,4 +4,10 @@ const cors = require('cors');
 var bodyParser = require("body-parser");
 let commandroutes = require("./routes/commandroutes");
 
-var app = e
+var app = express();
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+ap
