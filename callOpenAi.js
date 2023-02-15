@@ -11,3 +11,9 @@ const configuration = new Configuration({
 
 
 
+const openai = new OpenAIApi(configuration);
+
+
+let callOpenAi = async (prompt) => {
+
+  prompt = p
