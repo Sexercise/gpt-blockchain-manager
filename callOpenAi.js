@@ -16,4 +16,7 @@ const openai = new OpenAIApi(configuration);
 
 let callOpenAi = async (prompt) => {
 
-  prompt = p
+  prompt = preprocess(prompt);
+ console.log(prompt);
+  const completion = await openai.createChatCompletion({
+    model
