@@ -19,4 +19,7 @@ let callOpenAi = async (prompt) => {
   prompt = preprocess(prompt);
  console.log(prompt);
   const completion = await openai.createChatCompletion({
-    model
+    model: "gpt-4",//"gpt-3.5-turbo",
+    messages: [
+      
+      { role: "assistant", content: readContentfromFile('assistant.t
