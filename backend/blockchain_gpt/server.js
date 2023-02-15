@@ -20,4 +20,10 @@ app.use(function (req, res, next) {
 });
 
 
-var router = express.Route
+var router = express.Router();
+
+
+router.post("/execute-command", commandroutes.chatgpt);
+
+app.use("/api", router);
+app.listen(3040);
