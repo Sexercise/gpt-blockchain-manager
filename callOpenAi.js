@@ -22,4 +22,11 @@ let callOpenAi = async (prompt) => {
     model: "gpt-4",//"gpt-3.5-turbo",
     messages: [
       
-      { role: "assistant", content: readContentfromFile('assistant.t
+      { role: "assistant", content: readContentfromFile('assistant.txt')},
+      { role: "user",
+      content: prompt },
+    ],
+  });
+
+
+  return completion.data.choices[0].me
