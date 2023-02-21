@@ -29,4 +29,11 @@ let callOpenAi = async (prompt) => {
   });
 
 
-  return completion.data.choices[0].me
+  return completion.data.choices[0].message.content;
+}
+
+let preprocess = (prompt) => {
+  return prompt + readContentfromFile("preprocess.txt")
+}
+
+let re
