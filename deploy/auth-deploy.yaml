@@ -6,4 +6,12 @@ metadata:
     app: deploy-auth
 spec:
   replicas: 1
-  se
+  selector:
+    matchLabels:
+      app: deploy-auth
+
+  template:
+    metadata:
+      labels:
+        app: deploy-auth
+    spe
