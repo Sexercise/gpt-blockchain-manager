@@ -1,1 +1,9 @@
-apiVer
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deploy
+  labels:
+    app: deploy-auth
+spec:
+  replicas: 1
+  se
