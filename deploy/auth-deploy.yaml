@@ -14,4 +14,8 @@ spec:
     metadata:
       labels:
         app: deploy-auth
-    spe
+    spec:
+      containers:
+      - name: auth-containers
+        image: uk-london-1.ocir.io/lrqd49b08lgo/novateam:aauth1
+     
