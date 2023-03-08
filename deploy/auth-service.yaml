@@ -3,4 +3,11 @@ kind: Service
 metadata:
   name: auth-service
 
-s
+spec:
+  selector:
+    app: deploy-auth
+  ports:
+  - targetPort: 3001
+    port: 3001
+
+  type: NodePort
