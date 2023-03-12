@@ -3,4 +3,10 @@ kind: Service
 metadata:
   name: frontend-service
 spec:
-  selecto
+  selector:
+    app: deploy-frontend
+  ports:
+  - targetPort: 80
+    port: 80
+
+  type: NodePort
