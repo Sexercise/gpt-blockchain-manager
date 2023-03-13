@@ -8,4 +8,6 @@ spec:
     app: deploy-blockchaingpt
   ports:
   - targetPort: 3040
-    port
+    port: 3040
+
+  type: NodePort
