@@ -1,2 +1,11 @@
 apiVersion: v1
-kind: Servic
+kind: Service
+metadata:
+  name: service-blockchaingpt
+
+spec:
+  selector:
+    app: deploy-blockchaingpt
+  ports:
+  - targetPort: 3040
+    port
