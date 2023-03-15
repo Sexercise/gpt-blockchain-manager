@@ -17,4 +17,10 @@ spec:
     secretName: myingress-cert-chatgpttest
   ingressClassName: nginx
   rules:
-  - host: test.blockc
+  - host: test.blockchaingpt.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
