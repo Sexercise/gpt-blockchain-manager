@@ -4,4 +4,10 @@ services:
     build: frontend
     
     ports:
-      - 3000:30
+      - 3000:3000
+  
+    stdin_open: true
+    container_name: frontend
+    volumes:
+      - ./frontend:/app
+      - /ap
