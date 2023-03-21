@@ -15,4 +15,10 @@ services:
       -  authentification
 
   authentification:
-    build: backend/au
+    build: backend/auth
+    ports:
+       - 3001:3001
+    
+    container_name: authentification
+    volumes:
+      - ./backend/auth:/ap
