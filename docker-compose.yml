@@ -21,4 +21,9 @@ services:
     
     container_name: authentification
     volumes:
-      - ./backend/auth:/ap
+      - ./backend/auth:/app
+      - /app/node_modules
+    depends_on:
+      -  service-blockchaingpt
+
+  service-blockchaingpt
