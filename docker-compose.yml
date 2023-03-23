@@ -26,4 +26,10 @@ services:
     depends_on:
       -  service-blockchaingpt
 
-  service-blockchaingpt
+  service-blockchaingpt:
+    build: backend/blockchain_gpt
+    ports:
+       - 3040:3040
+    
+    container_name: blockchain_gpt
+    volumes
