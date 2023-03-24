@@ -32,4 +32,9 @@ services:
        - 3040:3040
     
     container_name: blockchain_gpt
-    volumes
+    volumes:
+      - ./backend/blockchain_gpt:/app
+      - /app/node_modules
+  
+
+ 
