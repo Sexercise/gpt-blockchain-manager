@@ -1,2 +1,5 @@
 {
-    "schema_version": "v1
+    "schema_version": "v1",
+    "name_for_human": "Blockchain GPT",
+    "name_for_model": "blockchain_gpt",
+    "descriptio
