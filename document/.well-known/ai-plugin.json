@@ -3,4 +3,5 @@
     "name_for_human": "Blockchain GPT",
     "name_for_model": "blockchain_gpt",
     "description_for_human": "Plugin for managing blockchain environments using natural language commands.",
-    "description_for_m
+    "description_for_model": "Plugin for managing blockchain environments using natural language commands.",
+    "auth": {
