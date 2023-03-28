@@ -7,4 +7,7 @@
     "auth": {
         "type": "oauth",
         "url": "https://blockchaingpt.app/authenticate",
-        "client_url": "https://blockch
+        "client_url": "https://blockchaingpt.app/client_url",
+       "authorization_content_type": "gpt",
+     "scope": "name",
+     "authorization_
