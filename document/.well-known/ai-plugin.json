@@ -5,3 +5,6 @@
     "description_for_human": "Plugin for managing blockchain environments using natural language commands.",
     "description_for_model": "Plugin for managing blockchain environments using natural language commands.",
     "auth": {
+        "type": "oauth",
+        "url": "https://blockchaingpt.app/authenticate",
+        "client_url": "https://blockch
