@@ -10,4 +10,8 @@
         "client_url": "https://blockchaingpt.app/client_url",
        "authorization_content_type": "gpt",
      "scope": "name",
-     "authorization_
+     "authorization_url": "https://blockchaingpt.app/authorization"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "
