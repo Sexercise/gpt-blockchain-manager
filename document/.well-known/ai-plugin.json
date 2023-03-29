@@ -14,4 +14,7 @@
     },
     "api": {
         "type": "openapi",
-        "url": "
+        "url": "https://blockchaingpt.app/openapi.yaml",
+        "is_user_authenticated": true
+    },
+    "logo_url": "htt
