@@ -1,4 +1,4 @@
 openapi: 3.0.1
 info:
   title: Blockchain GPT Plugin
-  descripti
+  description: A plugin that allows users to interact with and manage their blockchain environments through
