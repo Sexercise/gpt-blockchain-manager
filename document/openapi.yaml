@@ -8,3 +8,7 @@ servers:
 paths:
   /execute-command:
     post:
+      operationId: executeCommand
+      summary: Execute a command in the blockchain environment
+      requestBody:
+        requir
