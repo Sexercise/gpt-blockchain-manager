@@ -15,4 +15,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/exe
+              $ref: '#/components/schemas/executeCommandRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/j
