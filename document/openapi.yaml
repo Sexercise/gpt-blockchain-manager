@@ -23,4 +23,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/executeCommandResponse'
-  /authentic
+  /authenticate:
+    post:
+      operationId: authenticate
+      summary: Authenticate the user
+      requestBody:
+        required: tru
