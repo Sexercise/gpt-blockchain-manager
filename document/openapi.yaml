@@ -28,4 +28,8 @@ paths:
       operationId: authenticate
       summary: Authenticate the user
       requestBody:
-        required: tru
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components
