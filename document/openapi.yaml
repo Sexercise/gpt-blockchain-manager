@@ -37,4 +37,6 @@ paths:
         "200":
           description: OK
           content:
-            applicat
+            application/json:
+              schema:
+                $ref: '#/components/schemas/authenticateRespons
