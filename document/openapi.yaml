@@ -32,4 +32,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components
+              $ref: '#/components/schemas/authenticateRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            applicat
