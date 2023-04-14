@@ -39,4 +39,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/authenticateRespons
+                $ref: '#/components/schemas/authenticateResponse'
+components:
+  schemas:
+    executeCommandRequest:
+      type: object
+      required:
+      - command
+ 
