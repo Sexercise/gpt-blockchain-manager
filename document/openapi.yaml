@@ -46,4 +46,7 @@ components:
       type: object
       required:
       - command
- 
+      properties:
+        command:
+          type: string
+          description: The natural language command
