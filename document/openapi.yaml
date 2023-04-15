@@ -49,4 +49,8 @@ components:
       properties:
         command:
           type: string
-          description: The natural language command
+          description: The natural language command to execute in the blockchain environment.
+    executeCommandResponse:
+      type: object
+      properties:
+        resu
