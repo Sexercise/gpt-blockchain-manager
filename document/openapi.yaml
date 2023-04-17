@@ -57,4 +57,10 @@ components:
           type: string
           description: The result of the executed command.
     authenticateRequest:
-      type: ob
+      type: object
+      required:
+      - apiKey
+      properties:
+        apiKey:
+          type: string
+          desc
