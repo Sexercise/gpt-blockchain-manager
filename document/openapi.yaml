@@ -53,4 +53,8 @@ components:
     executeCommandResponse:
       type: object
       properties:
-        resu
+        result:
+          type: string
+          description: The result of the executed command.
+    authenticateRequest:
+      type: ob
