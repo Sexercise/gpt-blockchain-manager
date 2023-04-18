@@ -63,4 +63,6 @@ components:
       properties:
         apiKey:
           type: string
-          desc
+          description: The API key provided by the user for authentication.
+    authenticateResponse:
+      type: obj
