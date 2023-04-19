@@ -69,4 +69,5 @@ components:
       properties:
         accessToken:
           type: string
-          descri
+          description: The access token for the authenticated user.
+
