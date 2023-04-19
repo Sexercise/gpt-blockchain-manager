@@ -65,4 +65,8 @@ components:
           type: string
           description: The API key provided by the user for authentication.
     authenticateResponse:
-      type: obj
+      type: object
+      properties:
+        accessToken:
+          type: string
+          descri
