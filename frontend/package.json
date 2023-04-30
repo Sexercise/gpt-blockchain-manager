@@ -1,0 +1,68 @@
+
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@solana/wallet-adapter-phantom": "^0.9.22",
+        "@solana/web3.js": "^1.75.0",
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.2",
+        "@types/node": "^16.18.24",
+        "@types/react": "^18.0.18",
+        "@types/react-dom": "^18.0.6",
+        "@uniswap/sdk-core": "^3.2.2",
+        "@uniswap/smart-order-router": "^3.11.0",
+        "@uniswap/v3-core": "^1.0.1",
+        "@uniswap/v3-periphery": "^1.4.3",
+        "@uniswap/v3-sdk": "^3.9.0",
+        "axios": "^0.21.4",
+        "chart.js": "^3.5.0",
+        "chartjs-plugin-annotation": "^1.1.0",
+        "ethers": "^5.7.2",
+        "http": "^0.0.1-security",
+        "path": "^0.12.7",
+        "query-string": "^6.14.1",
+        "react": "^18.2.0",
+        "react-chartjs-2": "^4.3.1",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.2.1",
+        "react-scripts": "5.0.1",
+        "superagent": "^8.0.9",
+        "supertokens-auth-react": "latest",
+        "typescript": "^4.8.2",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "proxy": "http://authentification:3001",
+    "devDependencies": {
+        "@types/node": "^18.11.9",
+        "@types/superagent": "^4.1.16",
+        "tslib": "^2.4.1"
+    }
+}
