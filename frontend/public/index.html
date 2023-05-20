@@ -25,4 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <script src="https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"></script>
     <script>
-      fetch('https://cdn.jsdelivr.net/npm/@openzeppelin/contracts/build/contracts/
+      fetch('https://cdn.jsdelivr.net/npm/@openzeppelin/contracts/build/contracts/ERC20.json')
+        .then((response) => response.json())
+        .then((data) => {
+          window.ERC20 = data
