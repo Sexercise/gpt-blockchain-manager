@@ -1,2 +1,3 @@
 import "./App.css";
-import SuperTokens, { S
+import SuperTokens, { SuperTokensWrapper, getSuperTokensRoutesForReactRouterDom } from "supertokens-auth-react";
+import { Se
