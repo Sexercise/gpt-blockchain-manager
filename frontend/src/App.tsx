@@ -8,4 +8,8 @@ import Tester from "./tester";
 import ChartComponent from "./adapters/ChartComponent";
 SuperTokens.init(SuperTokensConfig);
 
-function A
+function App() {
+    return (
+        <SuperTokensWrapper>
+            <div className="App app-container">
+                <Rout
