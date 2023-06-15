@@ -12,4 +12,7 @@ function App() {
     return (
         <SuperTokensWrapper>
             <div className="App app-container">
-                <Rout
+                <Router>
+                    <div className="fill">
+                        <Routes>
+                            {/*
