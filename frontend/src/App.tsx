@@ -16,4 +16,8 @@ function App() {
                     <div className="fill">
                         <Routes>
                             {/* This shows the login UI on "/auth" route */}
-                            {getSuperTokensRoutesForReactRou
+                            {getSuperTokensRoutesForReactRouterDom(require("react-router-dom"))}
+
+                            <Route
+                                path="/"
+    
