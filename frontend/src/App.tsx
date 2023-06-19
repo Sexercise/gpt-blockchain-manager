@@ -20,4 +20,5 @@ function App() {
 
                             <Route
                                 path="/"
-    
+                                element={
+                                    /* This protects the "/" route 
