@@ -21,4 +21,6 @@ function App() {
                             <Route
                                 path="/"
                                 element={
-                                    /* This protects the "/" route 
+                                    /* This protects the "/" route so that it shows
+                                  <Home /> only if the user is logged in.
+  
