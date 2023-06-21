@@ -24,4 +24,6 @@ function App() {
                                     /* This protects the "/" route so that it shows
                                   <Home /> only if the user is logged in.
                                   Else it redirects the user to "/auth" */
-                                    <Session
+                                    <SessionAuth>
+                                        <Home />
+                                    </SessionA
