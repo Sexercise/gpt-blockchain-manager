@@ -26,4 +26,9 @@ function App() {
                                   Else it redirects the user to "/auth" */
                                     <SessionAuth>
                                         <Home />
-                                    </SessionA
+                                    </SessionAuth>
+                                }
+                            />
+
+                            <Route
+               
