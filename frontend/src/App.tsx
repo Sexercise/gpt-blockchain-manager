@@ -34,4 +34,8 @@ function App() {
                                 path="/test"
 
                                 element={
-                         
+                                    <Tester />
+                                        
+                                } />
+
+                           
