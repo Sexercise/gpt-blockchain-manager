@@ -38,4 +38,8 @@ function App() {
                                         
                                 } />
 
-                           
+                              <Route
+                                path="/statics"
+
+                                element={
+            
