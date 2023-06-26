@@ -42,4 +42,6 @@ function App() {
                                 path="/statics"
 
                                 element={
-            
+                                    <ChartComponent />
+                                        
+              
