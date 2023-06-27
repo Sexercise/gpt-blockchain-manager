@@ -44,4 +44,7 @@ function App() {
                                 element={
                                     <ChartComponent />
                                         
-              
+                                } /> 
+                        </Routes>
+                    </div>
+                </Ro
