@@ -47,4 +47,10 @@ function App() {
                                 } /> 
                         </Routes>
                     </div>
-                </Ro
+                </Router>
+            </div>
+        </SuperTokensWrapper>
+    );
+}
+
+export default App;
