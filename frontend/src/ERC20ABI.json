@@ -1,3 +1,8 @@
 [
     {
-        "constant":
+        "constant": true,
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name"
