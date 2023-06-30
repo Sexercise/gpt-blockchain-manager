@@ -10,4 +10,9 @@
             }
         ],
         "payable": false,
-        "stateMut
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inp
