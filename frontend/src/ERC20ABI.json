@@ -5,4 +5,9 @@
         "name": "name",
         "outputs": [
             {
-                "name"
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMut
