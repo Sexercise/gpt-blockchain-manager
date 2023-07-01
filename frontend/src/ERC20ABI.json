@@ -15,4 +15,9 @@
     },
     {
         "constant": false,
-        "inp
+        "inputs": [
+            {
+                "name": "_spender",
+                "type": "address"
+            },
+         
