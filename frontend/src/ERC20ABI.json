@@ -24,4 +24,9 @@
                 "name": "_value",
                 "type": "uint256"
             }
-        ]
+        ],
+        "name": "approve",
+        "outputs": [
+            {
+                "name": "",
+                "type": "
