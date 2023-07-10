@@ -70,4 +70,9 @@
         "outputs": [
             {
                 "name": "",
-                "type"
+                "type": "bool"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "fun
