@@ -75,4 +75,10 @@
         ],
         "payable": false,
         "stateMutability": "nonpayable",
-        "type": "fun
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "decimals",
+        "outputs
