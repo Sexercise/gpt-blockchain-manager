@@ -86,4 +86,9 @@
                 "name": "",
                 "type": "uint8"
             }
-     
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+ 
