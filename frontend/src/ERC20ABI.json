@@ -81,4 +81,9 @@
         "constant": true,
         "inputs": [],
         "name": "decimals",
-        "outputs
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint8"
+            }
+     
