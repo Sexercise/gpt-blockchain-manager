@@ -96,4 +96,10 @@
         "inputs": [
             {
                 "name": "_owner",
-                "t
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+  
