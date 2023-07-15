@@ -102,4 +102,8 @@
         "name": "balanceOf",
         "outputs": [
             {
-  
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "payab
