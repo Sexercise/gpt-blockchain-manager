@@ -111,4 +111,9 @@
         "type": "function"
     },
     {
-        "constan
+        "constant": true,
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "na
