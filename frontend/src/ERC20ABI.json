@@ -116,4 +116,9 @@
         "name": "symbol",
         "outputs": [
             {
-                "na
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability
