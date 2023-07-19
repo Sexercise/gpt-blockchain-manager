@@ -132,4 +132,8 @@
                 "type": "address"
             },
             {
-        
+                "name": "_value",
+                "type": "uint256"
+            }
+        ],
+        "name": "transfer
