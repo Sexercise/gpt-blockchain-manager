@@ -136,4 +136,10 @@
                 "type": "uint256"
             }
         ],
-        "name": "transfer
+        "name": "transfer",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool"
+            }
+       
