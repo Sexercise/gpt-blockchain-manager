@@ -148,4 +148,8 @@
         "type": "function"
     },
     {
-        "constan
+        "constant": true,
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address
