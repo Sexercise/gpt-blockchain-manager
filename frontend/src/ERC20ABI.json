@@ -152,4 +152,9 @@
         "inputs": [
             {
                 "name": "_owner",
-                "type": "address
+                "type": "address"
+            },
+            {
+                "name": "_spender",
+                "type": "address"
+        
