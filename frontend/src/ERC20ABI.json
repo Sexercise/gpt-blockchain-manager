@@ -157,4 +157,9 @@
             {
                 "name": "_spender",
                 "type": "address"
-        
+            }
+        ],
+        "name": "allowance",
+        "outputs": [
+            {
+               
