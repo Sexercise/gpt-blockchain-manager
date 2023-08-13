@@ -212,4 +212,9 @@
             },
             {
                 "indexed": false,
-                "name": "value"
+                "name": "value",
+                "type": "uint256"
+            }
+        ],
+        "name": "Transfer",
+        "type": "ev
