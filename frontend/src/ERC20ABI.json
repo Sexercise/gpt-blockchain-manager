@@ -217,4 +217,6 @@
             }
         ],
         "name": "Transfer",
-        "type": "ev
+        "type": "event"
+    }
+]
