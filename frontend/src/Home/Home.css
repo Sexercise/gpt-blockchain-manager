@@ -160,3 +160,32 @@
 
 .link .link-icon {
     width: 15px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .bottom-links-container {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 64px;
+        row-gap: 34px;
+    }
+
+    .bottom-links-container .link {
+        margin-inline-end: 0;
+    }
+
+    .separator-line {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #home-container {
+        justify-content: start;
+        padding-block-start: 25px;
+    }
+
+    .app-container .main-container {
+        margin-block-end: 90px;
+    }
+}
