@@ -5,4 +5,10 @@ import {
   CelebrateIcon,
   GuideIcon,
   SeparatorLine,
-  Sign
+  SignOutIcon,
+} from "../assets/images";
+import Terminal from "../components/Terminal"
+
+interface ILink {
+  name: string;
+  onClick: () => voi
