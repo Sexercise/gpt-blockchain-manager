@@ -16,4 +16,9 @@ interface ILink {
 }
 
 export default function SuccessView(props: { userId: string }) {
-  let userId = prop
+  let userId = props.userId;
+
+  const navigate = useNavigate();
+
+  async function logoutClicked() {
+    await signOut();
