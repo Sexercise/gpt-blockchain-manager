@@ -29,4 +29,10 @@ export default function SuccessView(props: { userId: string }) {
     window.open(url, "_blank");
   }
 
- 
+  const links: ILink[] = [
+    {
+      name: "Sign Out",
+      onClick: logoutClicked,
+      icon: SignOutIcon,
+    },
+  
