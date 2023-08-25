@@ -22,3 +22,11 @@ export default function SuccessView(props: { userId: string }) {
 
   async function logoutClicked() {
     await signOut();
+    navigate("/auth");
+  }
+
+  function openLink(url: string) {
+    window.open(url, "_blank");
+  }
+
+ 
