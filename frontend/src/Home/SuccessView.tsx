@@ -35,4 +35,10 @@ export default function SuccessView(props: { userId: string }) {
       onClick: logoutClicked,
       icon: SignOutIcon,
     },
-  
+  ];
+
+  return (
+    <>
+      <div className="main-container">
+        <Terminal></Terminal>
+      </di
