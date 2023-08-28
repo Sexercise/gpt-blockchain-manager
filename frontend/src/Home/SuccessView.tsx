@@ -41,4 +41,8 @@ export default function SuccessView(props: { userId: string }) {
     <>
       <div className="main-container">
         <Terminal></Terminal>
-      </di
+      </div>
+
+      <div className="bottom-links-container">
+        {links.map((link) => (
+          <div className="link" key={
