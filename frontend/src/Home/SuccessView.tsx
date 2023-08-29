@@ -47,4 +47,9 @@ export default function SuccessView(props: { userId: string }) {
         {links.map((link) => (
           <div className="link" key={link.name}>
             <img className="link-icon" src={link.icon} alt={link.name} />
-            <div role={"button"
+            <div role={"button"} onClick={link.onClick}>
+              {link.name}
+            </div>
+          </div>
+        ))}
+      </d
