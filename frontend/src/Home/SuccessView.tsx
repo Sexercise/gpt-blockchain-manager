@@ -52,4 +52,7 @@ export default function SuccessView(props: { userId: string }) {
             </div>
           </div>
         ))}
-      </d
+      </div>
+    </>
+  );
+}
