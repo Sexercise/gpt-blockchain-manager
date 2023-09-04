@@ -7,4 +7,8 @@ export default function Home() {
 
     if (sessionContext.loading === true) {
         return null;
-    
+    }
+
+    return (
+        <div className="fill" id="home-container">
+            <SuccessView userId={sessionCont
