@@ -11,4 +11,7 @@ export default function Home() {
 
     return (
         <div className="fill" id="home-container">
-            <SuccessView userId={sessionCont
+            <SuccessView userId={sessionContext.userId} />
+        </div>
+    );
+}
