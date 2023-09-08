@@ -8,4 +8,8 @@ import { ChartDataset } from 'chart.js/auto';
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 
-// Re
+// Register the scales and elements
+Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
+
+  
+ 
