@@ -12,4 +12,11 @@ import queryString from 'query-string';
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
 
   
+  interface ChartData {
+    labels: string[];
+    datasets: ChartDataset<"line", number[]>[];
  
+  }
+
+  
+  
