@@ -19,4 +19,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
   }
 
   
-  
+  const ChartComponent:React.FC = () => {
+
+   
+    const location = useLocation();
+    const queryParams = quer
