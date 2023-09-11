@@ -23,4 +23,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
 
    
     const location = useLocation();
-    const queryParams = quer
+    const queryParams = queryString.parse(location.search);
+    const coinName = queryParams['coinName'] as string;
+    const vsCurrency
