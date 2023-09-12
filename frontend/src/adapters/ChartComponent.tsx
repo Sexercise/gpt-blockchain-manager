@@ -27,4 +27,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
     const coinName = queryParams['coinName'] as string;
     const vsCurrency = queryParams['vsCurrency'] as string;
     const days = parseInt(queryParams['days'] as string);
-    const [int
+    const [interval, setInterval] = useState<string>("daily");
+    const [chartData, setChartData] = useState<ChartData>({
+  
