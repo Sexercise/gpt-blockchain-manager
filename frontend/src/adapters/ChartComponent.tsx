@@ -29,4 +29,9 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
     const days = parseInt(queryParams['days'] as string);
     const [interval, setInterval] = useState<string>("daily");
     const [chartData, setChartData] = useState<ChartData>({
-  
+        labels: [],
+        datasets: []
+      });
+
+      const handleCheckboxChange = (index: number) => {
+        setChartData((p
