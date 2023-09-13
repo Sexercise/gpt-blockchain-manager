@@ -34,4 +34,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
       });
 
       const handleCheckboxChange = (index: number) => {
-        setChartData((p
+        setChartData((prevState) => {
+          return {
+            ...prevState,
+            datasets: prevState.datasets.map((datas
