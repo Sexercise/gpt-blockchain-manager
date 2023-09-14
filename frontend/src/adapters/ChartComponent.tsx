@@ -41,4 +41,9 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               if (i === index) {
                 return {
                   ...dataset,
-           
+                  hidden: !dataset.hidden,
+                };
+              }
+              return dataset;
+            }),
+          };
