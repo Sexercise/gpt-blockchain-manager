@@ -37,4 +37,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
         setChartData((prevState) => {
           return {
             ...prevState,
-            datasets: prevState.datasets.map((datas
+            datasets: prevState.datasets.map((dataset, i) => {
+              if (i === index) {
+                return {
+                  ...dataset,
+           
