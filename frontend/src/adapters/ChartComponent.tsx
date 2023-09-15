@@ -47,3 +47,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               return dataset;
             }),
           };
+        });
+      };
+      useEffect(() => {
+        const fetchData = async () => {
+          if (!vsCur
