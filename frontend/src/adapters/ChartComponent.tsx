@@ -51,4 +51,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
       };
       useEffect(() => {
         const fetchData = async () => {
-          if (!vsCur
+          if (!vsCurrency || !days || !coinName ) {
+            alert("Please enter a valid vs_currency and days and coinName ")
+     
