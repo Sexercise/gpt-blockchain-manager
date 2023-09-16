@@ -53,4 +53,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
         const fetchData = async () => {
           if (!vsCurrency || !days || !coinName ) {
             alert("Please enter a valid vs_currency and days and coinName ")
-     
+            
+            return;
+          }
+        try {
+        const response = await axios.get(`https://api
