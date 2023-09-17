@@ -59,4 +59,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
         try {
         const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinName}/market_chart`, {
             params: {
-                vs_currency: vsCurren
+                vs_currency: vsCurrency,
+                days: days,
+                interval: interval,
+            },  
+              }
