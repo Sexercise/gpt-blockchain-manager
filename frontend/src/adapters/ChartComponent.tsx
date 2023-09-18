@@ -63,4 +63,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                 days: days,
                 interval: interval,
             },  
-              }
+              });
+          const data = response.data;
+          const chartData: ChartData = {
+            labels: data.prices.map((
