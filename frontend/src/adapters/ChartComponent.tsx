@@ -66,4 +66,9 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               });
           const data = response.data;
           const chartData: ChartData = {
-            labels: data.prices.map((
+            labels: data.prices.map((price: any) =>
+            new Date(price[0]).toLocaleDateString()
+          ),
+          datasets: [
+            {
+   
