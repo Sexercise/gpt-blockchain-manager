@@ -71,4 +71,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
           ),
           datasets: [
             {
-   
+              data: data.prices.map((price: any) => price[1]),
+              label: `${coinName.toUpperCase()} Price`,
