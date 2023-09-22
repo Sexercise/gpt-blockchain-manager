@@ -76,4 +76,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               backgroundColor: "rgba(75,192,192,0.4)",
               borderColor: "rgba(75,192,192,1)",
               fill: false,
-     
+              hidden: false, // add this line
+            },
+            {
+              data: data.marke
