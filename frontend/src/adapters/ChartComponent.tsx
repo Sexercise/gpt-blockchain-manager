@@ -73,3 +73,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
             {
               data: data.prices.map((price: any) => price[1]),
               label: `${coinName.toUpperCase()} Price`,
+              backgroundColor: "rgba(75,192,192,0.4)",
+              borderColor: "rgba(75,192,192,1)",
+              fill: false,
+     
