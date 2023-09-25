@@ -79,4 +79,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               hidden: false, // add this line
             },
             {
-              data: data.marke
+              data: data.market_caps.map((market_cap: any) => market_cap[1]),
+              label: `${coinName.toUpperCase()} Market Cap`,
