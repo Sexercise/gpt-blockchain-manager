@@ -83,4 +83,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               label: `${coinName.toUpperCase()} Market Cap`,
               backgroundColor: "rgba(255, 99, 132, 0.4)",
               borderColor: "rgba(255, 99, 132, 1)",
-   
+              fill: false,
+              hidden: false, // add this line
+            },
+            {
+              data: dat
