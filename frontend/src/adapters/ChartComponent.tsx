@@ -87,4 +87,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               hidden: false, // add this line
             },
             {
-              data: dat
+              data: data.total_volumes.map((total_volume: any) => total_volume[1]),
+              label: `${coinName.toUpperCase()} Total Volu
