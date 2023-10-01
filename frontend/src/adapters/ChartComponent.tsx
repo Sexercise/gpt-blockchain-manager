@@ -88,4 +88,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
             },
             {
               data: data.total_volumes.map((total_volume: any) => total_volume[1]),
-              label: `${coinName.toUpperCase()} Total Volu
+              label: `${coinName.toUpperCase()} Total Volume`,
+              backgroundColor: "rgba(255, 206, 86, 0.4)",
+              borderColor: "
