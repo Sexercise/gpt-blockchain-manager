@@ -94,4 +94,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               fill: false,
               hidden: false, // add this line
             },
-       
+          ],
+          };
+          setChartData(chartData);
+        } catch (error) {
+          console.error
