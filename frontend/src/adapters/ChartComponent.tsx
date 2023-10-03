@@ -103,4 +103,17 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
         }
       
         fetchData();
-      },
+      }, []);
+      
+  
+  
+    
+
+  
+   
+  
+      return (
+        <div>
+         
+          {chartData ? (
+         
