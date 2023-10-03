@@ -98,4 +98,9 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
           };
           setChartData(chartData);
         } catch (error) {
-          console.error
+          console.error("Error fetching chart data:", error);
+        }
+        }
+      
+        fetchData();
+      },
