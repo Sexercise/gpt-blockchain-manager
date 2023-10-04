@@ -116,4 +116,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
         <div>
          
           {chartData ? (
-         
+            <div>
+              <div>
+                <Line
+                  style={{ maxWidth: '800px' }}
+              
