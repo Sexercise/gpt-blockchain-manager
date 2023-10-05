@@ -120,4 +120,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               <div>
                 <Line
                   style={{ maxWidth: '800px' }}
-              
+                  data={chartData}
+                  options={{
+                    responsive: true,
+                    plugins: {
+           
