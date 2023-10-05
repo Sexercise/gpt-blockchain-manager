@@ -124,4 +124,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                   options={{
                     responsive: true,
                     plugins: {
-           
+                      legend: {
+                        display: true,
+                        labels: {
+                  
