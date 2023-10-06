@@ -127,4 +127,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                       legend: {
                         display: true,
                         labels: {
-                  
+                          generateLabels: function (chart: any) {
+                            const datasets = chart.da
