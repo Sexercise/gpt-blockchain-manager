@@ -128,4 +128,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                         display: true,
                         labels: {
                           generateLabels: function (chart: any) {
-                            const datasets = chart.da
+                            const datasets = chart.data.datasets;
+                            return datasets.map((dataset: any, i: number) => {
+         
