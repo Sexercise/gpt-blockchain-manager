@@ -130,4 +130,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           generateLabels: function (chart: any) {
                             const datasets = chart.data.datasets;
                             return datasets.map((dataset: any, i: number) => {
-         
+                              return {
+                                datasetIndex: i,
+                                text:
