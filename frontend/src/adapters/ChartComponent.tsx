@@ -134,4 +134,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                                 datasetIndex: i,
                                 text: dataset.label,
                                 fillStyle: dataset.borderColor,
-                 
+                                strokeStyle: dataset.borderColor,
+                                lineWidth: 2,
+                              
