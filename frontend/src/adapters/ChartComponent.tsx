@@ -132,4 +132,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                             return datasets.map((dataset: any, i: number) => {
                               return {
                                 datasetIndex: i,
-                                text:
+                                text: dataset.label,
+                                fillStyle: dataset.borderColor,
+                 
