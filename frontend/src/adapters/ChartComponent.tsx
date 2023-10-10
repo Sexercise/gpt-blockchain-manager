@@ -136,4 +136,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                                 fillStyle: dataset.borderColor,
                                 strokeStyle: dataset.borderColor,
                                 lineWidth: 2,
-                              
+                                hidden: !chart.isDatasetVisible(i),
+                                index: i,
+                              };
+    
