@@ -139,4 +139,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                                 hidden: !chart.isDatasetVisible(i),
                                 index: i,
                               };
-    
+                            });
+                          },
+                          usePoin
