@@ -141,4 +141,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                               };
                             });
                           },
-                          usePoin
+                          usePointStyle: true,
+                          pointStyle: "circle",
+                          boxWidth: 10,
+   
