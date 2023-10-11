@@ -144,4 +144,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           usePointStyle: true,
                           pointStyle: "circle",
                           boxWidth: 10,
-   
+                          boxHeight: 10,
+                        },
+                        onClick: (e: any, legendIte
