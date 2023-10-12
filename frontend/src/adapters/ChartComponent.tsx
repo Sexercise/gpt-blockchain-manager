@@ -146,4 +146,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           boxWidth: 10,
                           boxHeight: 10,
                         },
-                        onClick: (e: any, legendIte
+                        onClick: (e: any, legendItem: any, legend: any) => {
+                          const index = legendItem.datasetIndex;
+                   
