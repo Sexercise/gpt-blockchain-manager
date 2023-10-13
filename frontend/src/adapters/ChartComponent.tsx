@@ -148,4 +148,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                         },
                         onClick: (e: any, legendItem: any, legend: any) => {
                           const index = legendItem.datasetIndex;
-                   
+                          const chart = legend.chart;
+                          const meta = chart.getDatasetMeta(index);
+ 
