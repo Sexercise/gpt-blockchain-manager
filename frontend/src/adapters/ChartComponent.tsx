@@ -150,4 +150,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           const index = legendItem.datasetIndex;
                           const chart = legend.chart;
                           const meta = chart.getDatasetMeta(index);
- 
+      
+                          meta.hidden = meta.hidden === null ? !chart.data.datasets[index].hidden : null;
