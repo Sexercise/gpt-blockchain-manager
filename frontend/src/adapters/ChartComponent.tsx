@@ -152,3 +152,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           const meta = chart.getDatasetMeta(index);
       
                           meta.hidden = meta.hidden === null ? !chart.data.datasets[index].hidden : null;
+                          chart.update();
+                        },
+                      },
+                      anno
