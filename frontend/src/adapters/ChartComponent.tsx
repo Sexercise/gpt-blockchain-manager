@@ -155,4 +155,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                           chart.update();
                         },
                       },
-                      anno
+                      annotation: {
+                        annotations: [
+                          {
+                            ty
