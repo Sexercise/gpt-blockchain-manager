@@ -158,4 +158,7 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                       annotation: {
                         annotations: [
                           {
-                            ty
+                            type: "line",
+                            scaleID: "y",
+                            value: 0,
+       
