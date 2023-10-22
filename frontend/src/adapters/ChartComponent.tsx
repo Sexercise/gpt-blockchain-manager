@@ -161,4 +161,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                             type: "line",
                             scaleID: "y",
                             value: 0,
-       
+                            borderColor: "rgb(255, 0, 0)",
+                            borderWidth: 2,
+                  
