@@ -163,4 +163,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                             value: 0,
                             borderColor: "rgb(255, 0, 0)",
                             borderWidth: 2,
-                  
+                            label: {
+                              enabled: true,
+                             
