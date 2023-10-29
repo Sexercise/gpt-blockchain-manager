@@ -169,4 +169,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                             },
                           } as any,
                         ],
- 
+                      },
+                    },
+                  }}
+                />
+      
