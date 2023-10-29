@@ -165,4 +165,8 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                             borderWidth: 2,
                             label: {
                               enabled: true,
-                             
+                              content: "Zero line",
+                            },
+                          } as any,
+                        ],
+ 
