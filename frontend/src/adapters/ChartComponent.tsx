@@ -173,4 +173,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                     },
                   }}
                 />
-      
+              </div>
+              <div>
+              {chartData && chartData.datasets && ch
