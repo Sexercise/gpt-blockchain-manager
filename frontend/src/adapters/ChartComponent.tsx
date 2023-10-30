@@ -175,4 +175,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
                 />
               </div>
               <div>
-              {chartData && chartData.datasets && ch
+              {chartData && chartData.datasets && chartData.datasets.map((dataset: any, i: number) => (
+                <div key={i} style={{ display: 'inline-block', m
