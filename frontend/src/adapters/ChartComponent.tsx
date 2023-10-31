@@ -176,4 +176,5 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               </div>
               <div>
               {chartData && chartData.datasets && chartData.datasets.map((dataset: any, i: number) => (
-                <div key={i} style={{ display: 'inline-block', m
+                <div key={i} style={{ display: 'inline-block', margin: '10px' }}>
+                   <input type="checkbox" checked={!dataset.hidden} onChange={() => ha
