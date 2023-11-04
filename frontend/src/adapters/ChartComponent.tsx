@@ -184,4 +184,6 @@ Chart.register(CategoryScale, LinearScale, PointElement, LineElement);
               </div>
             </div>
           ) : (
-         
+            <p>Please enter a valid coin name.</p>
+          )}
+          {!chartData && <p>Error fetching chart data
