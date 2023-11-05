@@ -119,3 +119,108 @@ interface ChartComponentProps {
   
    
   
+      return (
+        <div>
+            <div>
+                <input
+                type="text"
+                value={coinName}
+                onChange={(e) => setCoinName(e.target.value)}
+                placeholder="Enter coin name"
+                />
+                 <div>
+                <label>vs_currency:</label>
+                <input type="text" value={vsCurrency} onChange={handleVsCurrencyChange} />
+                </div>
+                <div>
+                <label>days:</label>
+                <input type="number" value={days} onChange={handleDaysChange} />
+                </div>
+                <div>
+                <label>interval:</label>
+                <input type="text" value={interval} onChange={handleIntervalChange} />
+                </div>
+                <button onClick={fetchChartData}>Submit</button>
+                
+          </div>
+           
+          {chartData ? (
+            <div>
+              <div>
+                <Line
+                  style={{ maxWidth: '800px' }}
+                  data={chartData}
+                  options={{
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        display: true,
+                        labels: {
+                          generateLabels: function (chart: any) {
+                            const datasets = chart.data.datasets;
+                            return datasets.map((dataset: any, i: number) => {
+                              return {
+                                datasetIndex: i,
+                                text: dataset.label,
+                                fillStyle: dataset.borderColor,
+                                strokeStyle: dataset.borderColor,
+                                lineWidth: 2,
+                                hidden: !chart.isDatasetVisible(i),
+                                index: i,
+                              };
+                            });
+                          },
+                          usePointStyle: true,
+                          pointStyle: "circle",
+                          boxWidth: 10,
+                          boxHeight: 10,
+                        },
+                        onClick: (e: any, legendItem: any, legend: any) => {
+                          const index = legendItem.datasetIndex;
+                          const chart = legend.chart;
+                          const meta = chart.getDatasetMeta(index);
+      
+                          meta.hidden = meta.hidden === null ? !chart.data.datasets[index].hidden : null;
+                          chart.update();
+                        },
+                      },
+                      annotation: {
+                        annotations: [
+                          {
+                            type: "line",
+                            scaleID: "y",
+                            value: 0,
+                            borderColor: "rgb(255, 0, 0)",
+                            borderWidth: 2,
+                            label: {
+                              enabled: true,
+                              content: "Zero line",
+                            },
+                          } as any,
+                        ],
+                      },
+                    },
+                  }}
+                />
+              </div>
+              <div>
+              {chartData && chartData.datasets && chartData.datasets.map((dataset: any, i: number) => (
+                <div key={i} style={{ display: 'inline-block', margin: '10px' }}>
+                   <input type="checkbox" checked={!dataset.hidden} onChange={() => handleCheckboxChange(i)} />
+                    <label style={{color: dataset.borderColor, marginLeft: '5px'}}>{dataset.label}</label>
+                </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <p>Please enter a valid coin name.</p>
+          )}
+          {!chartData && <p>Error fetching chart data. Please try again later.</p>}
+        </div>
+      );
+      
+      
+  
+};
+
+export default ChartComponentTest;
