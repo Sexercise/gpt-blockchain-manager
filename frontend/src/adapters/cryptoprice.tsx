@@ -10,4 +10,6 @@ const CryptoPrice: React.FC = () => {
 
     switch (quote) {
       case 'price':
-        
+        try {
+          const price = await _getCryptoCurrencyQuote("bitcoin" , "price");
+          setPrice(price
