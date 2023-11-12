@@ -12,4 +12,10 @@ const CryptoPrice: React.FC = () => {
       case 'price':
         try {
           const price = await _getCryptoCurrencyQuote("bitcoin" , "price");
-          setPrice(price
+          setPrice(price);
+        } catch (error) {
+          console.error(error);
+        }
+      break;
+      case 'volume':
+        tr
