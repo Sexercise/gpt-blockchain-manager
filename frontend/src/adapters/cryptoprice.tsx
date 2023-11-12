@@ -18,4 +18,6 @@ const CryptoPrice: React.FC = () => {
         }
       break;
       case 'volume':
-        tr
+        try {
+          const volume = await _getCryptoCurrencyQuote("bitcoin",'volume');
+          setVolum
