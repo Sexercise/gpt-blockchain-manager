@@ -32,4 +32,14 @@ const CryptoPrice: React.FC = () => {
         } catch (error) {
           console.error(error);
         }
-      break
+      break;
+      
+      default:
+        break;
+    }
+    
+  };
+
+  return (
+    <div>
+      <button onClick={(e:any)=>handle
