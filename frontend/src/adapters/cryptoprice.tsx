@@ -28,3 +28,8 @@ const CryptoPrice: React.FC = () => {
       case 'marketCap':
         try {
           const marketCap = await _getCryptoCurrencyQuote("bitcoin","marketCap");
+          setMarketCap(marketCap);
+        } catch (error) {
+          console.error(error);
+        }
+      break
