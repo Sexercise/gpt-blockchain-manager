@@ -49,4 +49,9 @@ const CryptoPrice: React.FC = () => {
       <div>{volume ? `$${volume.toFixed(2)}` : "Click the button to get the volume"}</div>
 
       <button onClick={(e:any)=>handleClick('marketCap')}>Get Bitcoin MarketCap</button>
-      <div>{marketCap ? `$${marketCap.toFixed(2)}` :
+      <div>{marketCap ? `$${marketCap.toFixed(2)}` : "Click the button to get the market cap"}</div>
+    </div>
+  );
+};
+
+export default CryptoPrice;
