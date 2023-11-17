@@ -43,4 +43,7 @@ const CryptoPrice: React.FC = () => {
   return (
     <div>
       <button onClick={(e:any)=>handleClick('price')}>Get Bitcoin Price</button>
-      <div>{price ? `$${price.toFixed(2)}` : "Click the button to get th
+      <div>{price ? `$${price.toFixed(2)}` : "Click the button to get the price"}</div>
+
+      <button onClick={(e:any)=>handleClick('volume')}>Get Bitcoin Total Volume</button>
+     
