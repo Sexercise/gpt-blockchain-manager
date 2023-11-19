@@ -135,3 +135,115 @@ export const _getNetworkInfo = async (): Promise<null | {
       case "0x3":
         networkName = "Ropsten Testnet";
         break;
+      case "0x4":
+        networkName = "Rinkeby Testnet";
+        break;
+      case "0x5":
+        networkName = "Goerli Testnet";
+        break;
+      case "0x2a":
+        networkName = "Kovan Testnet";
+        break;
+      default:
+        networkName = "Unknown Network";
+    }
+
+    return {
+      chainId: chainId,
+      networkId: networkId,
+      networkName: networkName,
+    };
+  } catch (error: any) {
+    // Handle error gracefully
+    console.log(
+      "Failed to retrieve network information from MetaMask: " + error.message
+    );
+    return null;
+  }
+};
+
+export const _getBalance = async (
+  address: any,
+  type = "ether"
+): Promise<null | number> => {
+  const ERC20 = window.ERC20;
+
+  // Check if MetaMask is installed
+  if (typeof window.ethereum === "undefined") {
+    console.log("Please install MetaMask to use this feature");
+    return null;
+  }
+
+  // Check if the wallet is connected
+  if (!window.ethereum.selectedAddress) {
+    console.log("You are not connected to MetaMask");
+    return null;
+  }
+
+  try {
+    let balance;
+    if (type === "ether") {
+      // Retrieve the balance in ether
+      balance = await window.ethereum.request({
+        method: "eth_getBalance",
+        params: [address],
+      });
+
+      balance = window.Web3.utils.fromWei(balance, "ether");
+    } else {
+      // Retrieve the balance of a specific token
+      const web3 = new window.Web3(window.web3.currentProvider);
+
+      const contract = new web3.eth.Contract(ERC20.abi, type);
+
+      balance = await contract.methods.balanceOf(address).call();
+      balance = window.Web3.utils.fromWei(balance, "ether");
+    }
+    return balance;
+  } catch (error: any) {
+    // Handle error gracefully
+    console.log("Failed to retrieve balance: " + error.message);
+    return null;
+  }
+};
+
+export const _deployNewToken = async (
+  name: any,
+  symbol: any,
+  supply: any
+): Promise<null | string> => {
+  const ERC20 = window.ERC20;
+
+  if (window.ethereum) {
+    // Check if the wallet is connected
+    if (!window.ethereum.selectedAddress) {
+      console.log("You are not connected to MetaMask");
+      return null;
+    } else {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+            
+        const bytecode =ERC20.bytecode; // Replace with the bytecode of your contract
+        // const abi = ERC20.abi; // Replace with the ABI of your contract
+
+        const abi = [
+          ...ERC20.abi,
+          {
+            "inputs": [
+              {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+          }
