@@ -54,3 +54,67 @@ const Solana: React.FC = () => {
            }else{
             setPublicKey(undefined)
            }
+        }catch(error){
+            console.error(error);
+        }
+    break;
+    case 'network':
+        try{
+           let result= await  _getSolanaNetworkInfo(rpcUrl);
+            setNetwork(result)
+        }catch(error){
+            console.error(error);
+        }
+    break;
+    case 'balance':
+        try{
+            
+            let address = await _getSolanaPublicKey(myWallet);
+            let result = null;
+            if(address && rpcUrl) result= await _getSolanaBalance(address,rpcUrl);
+            setBalance(result)
+        }catch(error){
+            console.error(error);
+        }
+    break;
+    case 'balance_token':
+        try{
+            
+            let address = await _getPublicKey();
+            console.log(token);
+            
+            let result= await  _getBalance(address,token);
+            setBalance(result)
+        }catch(error){
+            console.error(error);
+        }
+    break;
+    default:
+        break;
+   }
+  };
+
+  return (
+    <div>
+      <button onClick={(e:any)=>handleClick('connect')}>Connect to Phantom</button>
+      <div>{connected ? "You are connected" : "You are not connected"}</div>
+
+      <button onClick={(e:any)=>handleClick('disconnect')}>Disconnect from Phantom</button>
+      <div>{!connected ? "You are not connected" : "You are connected"}</div>
+
+      <button onClick={(e:any)=>handleClick('key')}>Get public key</button>
+      <div>{publicKey ? `${publicKey}` : "Connect your wallet, then click the button to get your public key"}</div>
+
+
+      <button onClick={(e:any)=>handleClick('network')}>Get network information</button>
+      <input type="text" value={rpcUrl} onChange={(e) => setRpcUrl(e.target.value)}  placeholder="RPC URL" id="rpcUrl"></input>
+      <div>{network ? `${JSON.stringify(network)}` : "Click the button to get network "}</div>
+
+      <button onClick={(e:any)=>handleClick('balance')}>Get your wallet balance</button>
+      <div>{balance ? `${balance}` : "Click the button to get balance "}</div>
+ 
+    </div>
+  );
+};
+
+export default Solana;
