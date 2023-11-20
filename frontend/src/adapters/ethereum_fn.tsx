@@ -247,3 +247,31 @@ export const _deployNewToken = async (
             "stateMutability": "nonpayable",
             "type": "function"
           }
+        ];
+      
+        const factory = new ethers.ContractFactory(abi, bytecode, signer);
+        const contract = await factory.deploy(name, symbol);
+      
+        await contract.deployed();
+
+    //     const recipient =_getPublicKey();
+
+    //     const tx = await contract.connect(signer).mint(recipient, supply);
+    //     console.log(`Transaction hash: ${tx.hash}`);
+    // console.log(`New tokens minted for ${recipient}: ${supply}`);
+
+        console.log(`Contract deployed at address: ${contract.address}`);
+    
+        return contract.address;
+      } catch (error: any) {
+        // Handle error gracefully
+        console.log("Failed to deploy new token: " + error.message);
+        return null;
+      }
+    }
+  } else {
+    // Check if MetaMask is installed
+    console.log("Please install MetaMask to use this feature");
+    return null;
+  }
+};
