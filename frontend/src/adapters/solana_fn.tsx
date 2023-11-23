@@ -18,4 +18,9 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
   }
 
   if (wallet.connected) {
-    console.log("You 
+    console.log("You are already connected to Phantom Wallet");
+    return wallet;
+  }
+
+  try {
+    await walle
