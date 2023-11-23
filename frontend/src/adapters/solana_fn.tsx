@@ -13,4 +13,9 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
   let wallet = new PhantomWalletAdapter(provider);
 
   if (!wallet) {
-    console.log("
+    console.log("Please install Phantom Wallet to use this feature");
+    return null;
+  }
+
+  if (wallet.connected) {
+    console.log("You 
