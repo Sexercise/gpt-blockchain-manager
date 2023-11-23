@@ -8,4 +8,9 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
   const provider = window.solana;
   if (!provider || !provider.isPhantom) {
     window.open("https://phantom.app/", "_blank");
-    retu
+    return null;
+  }
+  let wallet = new PhantomWalletAdapter(provider);
+
+  if (!wallet) {
+    console.log("
