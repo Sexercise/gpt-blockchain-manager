@@ -23,4 +23,9 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
   }
 
   try {
-    await walle
+    await wallet.connect();
+    if (!wallet.publicKey) {
+      console.log("No Connected Account");
+      return null;
+    }
+    lo
