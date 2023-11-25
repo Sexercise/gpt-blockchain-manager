@@ -28,4 +28,6 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
       console.log("No Connected Account");
       return null;
     }
-    lo
+    localStorage.setItem("solanaPublicKey", wallet.publicKey.toBase58());
+    return wallet;
+  } catch
