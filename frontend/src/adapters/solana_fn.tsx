@@ -36,4 +36,7 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
   }
 };
 
-export const _disco
+export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter): Promise<null | string> => {
+
+  if (!wallet) {
+    con
