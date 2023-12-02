@@ -30,4 +30,10 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
     }
     localStorage.setItem("solanaPublicKey", wallet.publicKey.toBase58());
     return wallet;
-  } catch
+  } catch (error: any) {
+    console.log("Failed to connect to Phantom Wallet: " + error.message);
+    return null;
+  }
+};
+
+export const _disco
