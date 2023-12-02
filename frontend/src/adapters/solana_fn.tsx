@@ -39,4 +39,10 @@ export const _connectToPhantomWallet = async (): Promise<null | PhantomWalletAda
 export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter): Promise<null | string> => {
 
   if (!wallet) {
-    con
+    console.log("Please install Phantom Wallet to use this feature");
+    return null;
+  }
+
+  console.log(wallet.connected)
+
+  
