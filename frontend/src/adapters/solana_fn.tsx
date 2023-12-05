@@ -45,4 +45,6 @@ export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter):
 
   console.log(wallet.connected)
 
-  
+  if (!wallet.connected) {
+    console.log("You are already disconnected from Phantom Wallet");
+    return null;
