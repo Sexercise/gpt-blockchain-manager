@@ -48,3 +48,9 @@ export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter):
   if (!wallet.connected) {
     console.log("You are already disconnected from Phantom Wallet");
     return null;
+  }
+
+  try {
+    await wallet.disconnect();
+    localStorage.removeItem("solanaPublicKey");
+    console.log("You hav
