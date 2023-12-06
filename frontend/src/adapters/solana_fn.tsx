@@ -53,4 +53,7 @@ export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter):
   try {
     await wallet.disconnect();
     localStorage.removeItem("solanaPublicKey");
-    console.log("You hav
+    console.log("You have successfully disconnected from Phantom Wallet");
+    return "success"
+  } catch (error: any) {
+    console.lo
