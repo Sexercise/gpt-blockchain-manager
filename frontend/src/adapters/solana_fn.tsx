@@ -56,4 +56,9 @@ export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter):
     console.log("You have successfully disconnected from Phantom Wallet");
     return "success"
   } catch (error: any) {
-    console.lo
+    console.log("Failed to disconnect from Phantom Wallet: " + error.message);
+    return null;
+  }
+};
+
+export const _getSolanaPublicKey = async (wa
