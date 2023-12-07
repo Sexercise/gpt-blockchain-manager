@@ -64,4 +64,9 @@ export const _disconnectFromPhantomWallet = async (wallet:PhantomWalletAdapter):
 export const _getSolanaPublicKey = async (wallet:PhantomWalletAdapter): Promise<null | string> => {
 
   if (!wallet) {
-    console.log("Please install Pha
+    console.log("Please install Phantom Wallet to use this feature");
+    return null;
+  }
+
+  if (!wallet.connected || !wallet.publicKey) {
+    co
