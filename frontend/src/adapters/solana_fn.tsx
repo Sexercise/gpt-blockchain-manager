@@ -74,4 +74,7 @@ export const _getSolanaPublicKey = async (wallet:PhantomWalletAdapter): Promise<
   }
 
   try {
-    return wallet.p
+    return wallet.publicKey.toBase58();
+  } catch (error: any) {
+    console.log(
+      "Failed to retrieve public key from Phantom Wa
