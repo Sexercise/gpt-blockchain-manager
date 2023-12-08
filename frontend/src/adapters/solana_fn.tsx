@@ -69,4 +69,9 @@ export const _getSolanaPublicKey = async (wallet:PhantomWalletAdapter): Promise<
   }
 
   if (!wallet.connected || !wallet.publicKey) {
-    co
+    console.log("You are not connected to Phantom Wallet");
+    return null;
+  }
+
+  try {
+    return wallet.p
