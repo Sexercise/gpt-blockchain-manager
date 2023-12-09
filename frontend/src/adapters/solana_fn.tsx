@@ -85,4 +85,8 @@ export const _getSolanaPublicKey = async (wallet:PhantomWalletAdapter): Promise<
 export const _getSolanaNetworkInfo = async (rpcUrl:any): Promise<{ endpoint: string, solanaCore: string|undefined, featureSet: number|undefined} | null> => {
   try{
     let connection = new Connection(rpcUrl)
-    let version:Version = await connecti
+    let version:Version = await connection.getVersion()
+    let endpoint =  connection.rpcEndpoint
+    const networkInfo = {
+      endpoint: endpoint,
+   
