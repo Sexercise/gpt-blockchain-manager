@@ -82,4 +82,4 @@ export const _getSolanaPublicKey = async (wallet:PhantomWalletAdapter): Promise<
     return null;
   }
 };
-export const _getSolanaNetworkInfo = async (rpcUrl:any):
+export const _getSolanaNetworkInfo = async (rpcUrl:any): Promise<{ endpoint: string, solanaCore: string|undefined, featureSet: number|undefined} | nul
