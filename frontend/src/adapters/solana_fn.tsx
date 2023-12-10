@@ -94,4 +94,10 @@ export const _getSolanaNetworkInfo = async (rpcUrl:any): Promise<{ endpoint: str
     };
     return networkInfo;
   }
-  catch(error
+  catch(error:any){
+    console.log("Error while connection to this RPC URL ", error.message )
+    return null;
+  }
+};
+
+export cons
