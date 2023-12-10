@@ -89,4 +89,9 @@ export const _getSolanaNetworkInfo = async (rpcUrl:any): Promise<{ endpoint: str
     let endpoint =  connection.rpcEndpoint
     const networkInfo = {
       endpoint: endpoint,
-   
+      solanaCore: version["solana-core"],
+      featureSet: version["feature-set"]
+    };
+    return networkInfo;
+  }
+  catch(error
