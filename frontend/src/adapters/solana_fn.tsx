@@ -101,4 +101,7 @@ export const _getSolanaNetworkInfo = async (rpcUrl:any): Promise<{ endpoint: str
 };
 
 export const _getSolanaBalance = async (address: string, rpcUrl: string): Promise<null | number> => {
-  tr
+  try {
+    let connection = new Connection(rpcUrl)
+    const publicKey = new PublicKey(address);
+    const balance = a
