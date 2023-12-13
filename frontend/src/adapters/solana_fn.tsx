@@ -104,4 +104,7 @@ export const _getSolanaBalance = async (address: string, rpcUrl: string): Promis
   try {
     let connection = new Connection(rpcUrl)
     const publicKey = new PublicKey(address);
-    const balance = a
+    const balance = await connection.getBalance(publicKey);
+    const lamportsToSol = balance / 1e9;
+    return lamportsToSol;
+  } ca
