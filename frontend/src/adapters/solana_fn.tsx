@@ -107,4 +107,8 @@ export const _getSolanaBalance = async (address: string, rpcUrl: string): Promis
     const balance = await connection.getBalance(publicKey);
     const lamportsToSol = balance / 1e9;
     return lamportsToSol;
-  } ca
+  } catch (error: any) {
+    console.log("Failed to retrieve balance: " + error.message);
+    return null;
+  }
+};
