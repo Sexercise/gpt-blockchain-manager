@@ -10,4 +10,7 @@ const {ethers} = require ('ethers')
 
 
 
-const providerMainnet =  new ethers.providers.JsonRpc
+const providerMainnet =  new ethers.providers.JsonRpcProvider(
+    "https://mainnet.infura.io/v3/"+process.env.REACT_APP_INFURA
+  );
+  const providerTestnet = new ethe
