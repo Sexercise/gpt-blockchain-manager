@@ -4,4 +4,10 @@ import  SwapRouterABI from '@uniswap/v3-periphery/artifacts/contracts/interfaces
 
 // import a from '@uniswap/v3-periphery/artifacts/contracts/interfaces/'
 
-import   ERC20ABI  fro
+import   ERC20ABI  from './../ERC20ABI.json';
+
+const {ethers} = require ('ethers')
+
+
+
+const providerMainnet =  new ethers.providers.JsonRpc
