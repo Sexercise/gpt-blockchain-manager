@@ -13,4 +13,9 @@ const {ethers} = require ('ethers')
 const providerMainnet =  new ethers.providers.JsonRpcProvider(
     "https://mainnet.infura.io/v3/"+process.env.REACT_APP_INFURA
   );
-  const providerTestnet = new ethe
+  const providerTestnet = new ethers.providers.JsonRpcProvider(
+    "https://goerli.infura.io/v3/"+process.env.REACT_APP_INFURA
+  );
+
+
+const wallet = new 
