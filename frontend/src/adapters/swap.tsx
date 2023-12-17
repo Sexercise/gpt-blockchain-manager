@@ -18,4 +18,6 @@ const providerMainnet =  new ethers.providers.JsonRpcProvider(
   );
 
 
-const wallet = new 
+const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY);
+const connected_wallet = wallet.connect(providerTestnet);
+
