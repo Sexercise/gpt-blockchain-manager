@@ -21,3 +21,7 @@ const providerMainnet =  new ethers.providers.JsonRpcProvider(
 const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY);
 const connected_wallet = wallet.connect(providerTestnet);
 
+
+const provider = providerTestnet // georli
+//uni link  0x4Cff90F02897259E1aB69FF6bbD370EA14529bD8
+cons
