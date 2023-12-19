@@ -30,4 +30,9 @@ const swapRouterAddress = '0xE592427A0AEce92De3Edee1F18E0157C05861564'
 const name0 = 'Wrapped Ether'
 const symbol0 = 'WETH'
 const decimals0 = 18
-const addre
+const address0 = '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6'
+
+const name1 = 'Uniswap Token'
+const symbol1 = 'UNI'
+const decimals1 = 18
+co
