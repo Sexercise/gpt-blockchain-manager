@@ -24,4 +24,5 @@ const connected_wallet = wallet.connect(providerTestnet);
 
 const provider = providerTestnet // georli
 //uni link  0x4Cff90F02897259E1aB69FF6bbD370EA14529bD8
-cons
+const poolAddress = "0x4d1892f15B03db24b55E73F9801826a56d6f0755" // UNI/WETH
+const swapRouterAddress = '0xE592427A0AEce9
