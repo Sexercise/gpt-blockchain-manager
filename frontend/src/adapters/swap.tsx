@@ -35,4 +35,8 @@ const address0 = '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6'
 const name1 = 'Uniswap Token'
 const symbol1 = 'UNI'
 const decimals1 = 18
-co
+const address1 = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
+
+interface Immutables {
+    factory: string
+    token0: st
