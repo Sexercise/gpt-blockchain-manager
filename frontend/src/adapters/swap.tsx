@@ -46,4 +46,9 @@ interface Immutables {
     maxLiquidityPerTick: any
   }
   
-  inter
+  interface State {
+    liquidity: any
+    sqrtPriceX96: any
+    tick: number
+    observationIndex: number
+    ob
