@@ -51,4 +51,7 @@ interface Immutables {
     sqrtPriceX96: any
     tick: number
     observationIndex: number
-    ob
+    observationCardinality: number
+    observationCardinalityNext: number
+    feeProtocol: number
+    un
