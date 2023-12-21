@@ -39,4 +39,11 @@ const address1 = '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984'
 
 interface Immutables {
     factory: string
-    token0: st
+    token0: string
+    token1: string
+    fee: number
+    tickSpacing: number
+    maxLiquidityPerTick: any
+  }
+  
+  inter
