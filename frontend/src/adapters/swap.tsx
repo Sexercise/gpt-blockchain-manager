@@ -67,4 +67,8 @@ interface Immutables {
     const [factory, token0, token1, fee, tickSpacing, maxLiquidityPerTick] = await Promise.all([
       poolContract.factory(),
       poolContract.token0(),
-      poo
+      poolContract.token1(),
+      poolContract.fee(),
+      poolContract.tickSpacing(),
+      poolContract.maxLiquidityPerTick(),
+ 
