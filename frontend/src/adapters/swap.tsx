@@ -60,4 +60,8 @@ interface Immutables {
   const poolContract= new ethers.Contract(
     poolAddress,
     IUniswapV3PoolABI.abi,
+    provider
+  );
   
+  async function getPoolImmutables() {
+    const [factory, token0, token1, fee, tickSpacing,
