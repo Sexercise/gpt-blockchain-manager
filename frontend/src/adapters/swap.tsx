@@ -54,4 +54,10 @@ interface Immutables {
     observationCardinality: number
     observationCardinalityNext: number
     feeProtocol: number
-    un
+    unlocked: boolean
+  }
+
+  const poolContract= new ethers.Contract(
+    poolAddress,
+    IUniswapV3PoolABI.abi,
+  
