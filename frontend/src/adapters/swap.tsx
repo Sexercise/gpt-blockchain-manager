@@ -64,4 +64,7 @@ interface Immutables {
   );
   
   async function getPoolImmutables() {
-    const [factory, token0, token1, fee, tickSpacing,
+    const [factory, token0, token1, fee, tickSpacing, maxLiquidityPerTick] = await Promise.all([
+      poolContract.factory(),
+      poolContract.token0(),
+      poo
