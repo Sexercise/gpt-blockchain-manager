@@ -71,4 +71,11 @@ interface Immutables {
       poolContract.fee(),
       poolContract.tickSpacing(),
       poolContract.maxLiquidityPerTick(),
- 
+    ])
+  
+    const immutables: Immutables = {
+      factory,
+      token0,
+      token1,
+      fee,
+   
