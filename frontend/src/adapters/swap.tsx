@@ -78,4 +78,13 @@ interface Immutables {
       token0,
       token1,
       fee,
-   
+      tickSpacing,
+      maxLiquidityPerTick,
+    }
+    return immutables
+  }
+
+
+  
+  async function getPoolState() {
+    con
