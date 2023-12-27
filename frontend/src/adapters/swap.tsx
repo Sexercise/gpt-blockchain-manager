@@ -93,4 +93,7 @@ interface Immutables {
       liquidity,
       sqrtPriceX96: slot[0],
       tick: slot[1],
-      observ
+      observationIndex: slot[2],
+      observationCardinality: slot[3],
+      observationCardinalityNext: slot[4],
+      fee
