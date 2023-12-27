@@ -96,4 +96,16 @@ interface Immutables {
       observationIndex: slot[2],
       observationCardinality: slot[3],
       observationCardinalityNext: slot[4],
-      fee
+      feeProtocol: slot[5],
+      unlocked: slot[6],
+    }
+  
+    return PoolState
+  }
+
+
+
+
+  
+
+  const swapRouterContract 
