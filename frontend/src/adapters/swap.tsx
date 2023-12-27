@@ -89,4 +89,8 @@ interface Immutables {
   async function getPoolState() {
     const [liquidity, slot] = await Promise.all([poolContract.liquidity(), poolContract.slot0()])
   
- 
+    const PoolState: State = {
+      liquidity,
+      sqrtPriceX96: slot[0],
+      tick: slot[1],
+      observ
