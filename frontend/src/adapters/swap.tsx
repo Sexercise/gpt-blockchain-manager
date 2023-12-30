@@ -108,4 +108,10 @@ interface Immutables {
 
   
 
-  const swapRouterContract 
+  const swapRouterContract  = new ethers.Contract(
+    swapRouterAddress,
+    SwapRouterABI.abi,
+    provider
+  )
+
+  /
