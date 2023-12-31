@@ -130,4 +130,9 @@ export const _swap =async ()=> {
 
   const inputAmount = 0.001
   // .001 => 1 000 000 000 000 000
-  const amountIn:a
+  const amountIn:any = ethers.utils.parseUnits(
+    inputAmount.toString(),
+    decimals0
+  )
+
+  const approvalAmount = (amou
