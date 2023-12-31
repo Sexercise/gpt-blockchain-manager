@@ -119,4 +119,8 @@ interface Immutables {
   //   let a = await.swapRouterAddress.
   // }
 
-export const _swap =a
+export const _swap =async ()=> {
+  console.log(swapRouterContract)
+
+  const immutables = await getPoolImmutables()
+  const state 
