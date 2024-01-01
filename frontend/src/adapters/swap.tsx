@@ -135,4 +135,5 @@ export const _swap =async ()=> {
     decimals0
   )
 
-  const approvalAmount = (amou
+  const approvalAmount = (amountIn * 100000).toString()
+  const tokenContract0 = new ethers.Contract( address0, ERC20ABI,provider)
