@@ -137,3 +137,5 @@ export const _swap =async ()=> {
 
   const approvalAmount = (amountIn * 100000).toString()
   const tokenContract0 = new ethers.Contract( address0, ERC20ABI,provider)
+  const approvalResponse = await tokenContract0.connect(connected_wallet).approve(
+    swapRouterA
