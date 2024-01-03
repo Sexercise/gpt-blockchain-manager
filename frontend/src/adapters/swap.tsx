@@ -145,3 +145,6 @@ export const _swap =async ()=> {
   const params = {
     tokenIn: immutables.token1,
     tokenOut: immutables.token0,
+    fee: immutables.fee,
+    recipient: process.env.REACT_APP_WALLET,
+    deadline: Math.floor(Date.now() / 1000) + (60 * 10)
