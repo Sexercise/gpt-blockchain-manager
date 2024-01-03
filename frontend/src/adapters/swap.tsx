@@ -147,4 +147,14 @@ export const _swap =async ()=> {
     tokenOut: immutables.token0,
     fee: immutables.fee,
     recipient: process.env.REACT_APP_WALLET,
-    deadline: Math.floor(Date.now() / 1000) + (60 * 10)
+    deadline: Math.floor(Date.now() / 1000) + (60 * 10),
+    amountIn: amountIn,
+    amountOutMinimum: 0,
+    sqrtPriceLimitX96: 0,
+  }
+
+
+
+
+  try {
+    const tx =  await swapR
