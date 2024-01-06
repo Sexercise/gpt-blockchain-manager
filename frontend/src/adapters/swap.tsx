@@ -160,4 +160,8 @@ export const _swap =async ()=> {
     const tx =  await swapRouterContract.connect(connected_wallet).exactInputSingle(
         params,
         {
-          gasLimit: ethe
+          gasLimit: ethers.utils.hexlify(1000000)
+        }
+      )
+    const receipt = await tx.wait();
+    console.log("receipt "
