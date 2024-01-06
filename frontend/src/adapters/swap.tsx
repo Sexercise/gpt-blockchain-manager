@@ -157,4 +157,7 @@ export const _swap =async ()=> {
 
 
   try {
-    const tx =  await swapR
+    const tx =  await swapRouterContract.connect(connected_wallet).exactInputSingle(
+        params,
+        {
+          gasLimit: ethe
