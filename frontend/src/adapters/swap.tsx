@@ -164,4 +164,9 @@ export const _swap =async ()=> {
         }
       )
     const receipt = await tx.wait();
-    console.log("receipt "
+    console.log("receipt ", receipt);
+  } catch (error) {
+    console.log("error ", error);
+  }
+}
+
