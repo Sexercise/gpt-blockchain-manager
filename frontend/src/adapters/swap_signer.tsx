@@ -17,4 +17,7 @@ export const swapTokens = async (
     "https://goerli.infura.io/v3/" + process.env.REACT_APP_INFURA;
 
   // const provider = new JsonRpcProvider(providerUrl);
-  const provi
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+  const signer = provider.getSigner();
+  const routerContract = new
