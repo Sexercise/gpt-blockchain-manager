@@ -8,4 +8,10 @@ const UNISWAP_V3_ROUTER_ADDRESS = "0xE592427A0AEce92De3Edee1F18E0157C05861564"; 
 const {ethers} = require ('ethers')
 
 export const swapTokens = async (
-  tokenInAd
+  tokenInAddress: string,
+  tokenOutAddress: string,
+  amountIn: BigNumber,
+  account: any
+) => {
+  const providerUrl =
+    "https://go
