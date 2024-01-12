@@ -14,4 +14,7 @@ export const swapTokens = async (
   account: any
 ) => {
   const providerUrl =
-    "https://go
+    "https://goerli.infura.io/v3/" + process.env.REACT_APP_INFURA;
+
+  // const provider = new JsonRpcProvider(providerUrl);
+  const provi
