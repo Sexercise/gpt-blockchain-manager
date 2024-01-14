@@ -20,4 +20,10 @@ export const swapTokens = async (
   const provider = new ethers.providers.Web3Provider(window.ethereum);
 
   const signer = provider.getSigner();
-  const routerContract = new
+  const routerContract = new Contract(
+    UNISWAP_V3_ROUTER_ADDRESS,
+    SwapRouterABI.abi,
+    signer
+  );
+
+  const network = await provid
