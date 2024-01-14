@@ -26,4 +26,7 @@ export const swapTokens = async (
     signer
   );
 
-  const network = await provid
+  const network = await provider.getNetwork();
+  const chainId = network.chainId;
+
+  const tokenIn = new Token(chainId, tokenInAddress, 18); // Assuming 18
