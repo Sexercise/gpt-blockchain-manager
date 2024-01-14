@@ -29,4 +29,7 @@ export const swapTokens = async (
   const network = await provider.getNetwork();
   const chainId = network.chainId;
 
-  const tokenIn = new Token(chainId, tokenInAddress, 18); // Assuming 18
+  const tokenIn = new Token(chainId, tokenInAddress, 18); // Assuming 18 decimals
+  const tokenOut = new Token(chainId, tokenOutAddress, 18); // Assuming 18 decimals
+
+  // Construct the path using the
