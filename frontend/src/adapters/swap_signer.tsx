@@ -33,4 +33,7 @@ export const swapTokens = async (
   const tokenOut = new Token(chainId, tokenOutAddress, 18); // Assuming 18 decimals
 
   // Construct the path using the token addresses and the pool's fee tier (500, 3000, or 10000)
-  const poolFeeTier = 3000; // Example fee tie
+  const poolFeeTier = 3000; // Example fee tier
+  const path = `0x${tokenInAddress.slice(2)}${tokenOutAddress.slice(
+    2
+  )}${poolFeeTier.toString(16).pa
