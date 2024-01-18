@@ -36,4 +36,7 @@ export const swapTokens = async (
   const poolFeeTier = 3000; // Example fee tier
   const path = `0x${tokenInAddress.slice(2)}${tokenOutAddress.slice(
     2
-  )}${poolFeeTier.toString(16).pa
+  )}${poolFeeTier.toString(16).padStart(6, "0")}`;
+
+  const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from now
+  const sli
