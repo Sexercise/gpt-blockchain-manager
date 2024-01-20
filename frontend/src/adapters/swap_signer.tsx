@@ -39,4 +39,6 @@ export const swapTokens = async (
   )}${poolFeeTier.toString(16).padStart(6, "0")}`;
 
   const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from now
-  const sli
+  const slippageTolerance = 50; // 0.5% slippage tolerance (50 bips)
+
+  // Calculate minimum amountOut based on slippage tol
