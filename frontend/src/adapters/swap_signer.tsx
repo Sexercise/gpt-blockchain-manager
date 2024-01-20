@@ -45,4 +45,8 @@ export const swapTokens = async (
   const amountOutMinimum = amountIn.mul(10000 - slippageTolerance).div(10000);
 
   // Swap tokens
-  con
+  console.log(routerContract);
+
+  // Swap tokens
+  const swapTx = await routerContract.exactInputSingle({
+    tokenIn: toke
