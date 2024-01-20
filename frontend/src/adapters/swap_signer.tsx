@@ -41,4 +41,8 @@ export const swapTokens = async (
   const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from now
   const slippageTolerance = 50; // 0.5% slippage tolerance (50 bips)
 
-  // Calculate minimum amountOut based on slippage tol
+  // Calculate minimum amountOut based on slippage tolerance
+  const amountOutMinimum = amountIn.mul(10000 - slippageTolerance).div(10000);
+
+  // Swap tokens
+  con
