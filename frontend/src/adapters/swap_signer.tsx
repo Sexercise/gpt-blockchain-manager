@@ -49,4 +49,9 @@ export const swapTokens = async (
 
   // Swap tokens
   const swapTx = await routerContract.exactInputSingle({
-    tokenIn: toke
+    tokenIn: tokenInAddress,
+    tokenOut: tokenOutAddress,
+    fee: poolFeeTier,
+    recipient: account,
+    deadline: deadline,
+    amountIn: amo
