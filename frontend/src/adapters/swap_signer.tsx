@@ -56,4 +56,9 @@ export const swapTokens = async (
     deadline: deadline,
     amountIn: amountIn.toString(),
     amountOutMinimum: amountOutMinimum.toString(),
-    sqrtPriceLimitX96: 0,
+    sqrtPriceLimitX96: 0, // Set to 0 for no price limit
+  },
+  {
+    gasLimit: ethers.utils.hexlify(1000000)
+  });
+  con
