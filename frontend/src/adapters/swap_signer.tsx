@@ -54,4 +54,6 @@ export const swapTokens = async (
     fee: poolFeeTier,
     recipient: account,
     deadline: deadline,
-    amountIn: amo
+    amountIn: amountIn.toString(),
+    amountOutMinimum: amountOutMinimum.toString(),
+    sqrtPriceLimitX96: 0,
