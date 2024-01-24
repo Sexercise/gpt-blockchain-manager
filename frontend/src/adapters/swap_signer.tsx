@@ -63,4 +63,5 @@ export const swapTokens = async (
   });
   const receipt = await swapTx.wait();
   console.log("receipt ", receipt);
-  console.log("Swap transa
+  console.log("Swap transaction hash:", swapTx.hash);
+};
