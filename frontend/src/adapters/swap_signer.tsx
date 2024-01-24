@@ -61,4 +61,6 @@ export const swapTokens = async (
   {
     gasLimit: ethers.utils.hexlify(1000000)
   });
-  con
+  const receipt = await swapTx.wait();
+  console.log("receipt ", receipt);
+  console.log("Swap transa
