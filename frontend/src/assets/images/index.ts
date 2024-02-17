@@ -1,2 +1,4 @@
 import SeparatorLine from "./separator-line.svg";
-import ArrowR
+import ArrowRight from "./arrow-right-icon.svg";
+import SignOutIcon from "./sign-out-icon.svg";
+import Gu
