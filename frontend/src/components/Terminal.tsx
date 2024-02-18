@@ -134,3 +134,129 @@ const Terminal: React.FC = () => {
     if (!window.ethereum.selectedAddress) {
       console.log("You are already disconnected from MetaMask");
       // return null;
+    }
+
+    try {
+      // Disconnect from MetaMask
+      await window.ethereum.request({
+        method: "wallet_requestPermissions",
+        params: [{ eth_accounts: {} }],
+      });
+      localStorage.removeItem("publicKey");
+      console.log("You have successfully disconnected from MetaMask");
+    } catch (error: any) {
+      // Handle error gracefully
+      console.log("Failed to disconnect from MetaMask: " + error.message);
+      // return null;
+    }
+  };
+
+  const _getPublicKey = async (): Promise<void | null | string> => {
+    // Check if MetaMask is installed
+    if (typeof window.ethereum === "undefined") {
+      console.log("Please install MetaMask to use this feature");
+      return null;
+    }
+
+    // Check if the wallet is connected
+    if (!window.ethereum.selectedAddress) {
+      console.log("You are not connected to MetaMask");
+      return null;
+    }
+
+    try {
+      // Retrieve the public key from MetaMask
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      return accounts[0];
+    } catch (error: any) {
+      // Handle error gracefully
+      console.log(
+        "Failed to retrieve public key from MetaMask: " + error.message
+      );
+      return null;
+    }
+  };
+
+  const _getNetworkInfo = async (): Promise<null | {
+    chainId: string;
+    networkId: number;
+    networkName: string;
+  }> => {
+    // Check if MetaMask is installed
+    if (typeof window.ethereum === "undefined") {
+      console.log("Please install MetaMask to use this feature");
+      return null;
+    }
+
+    // Check if the wallet is connected
+    if (!window.ethereum.selectedAddress) {
+      console.log("You are not connected to MetaMask");
+      return null;
+    }
+
+    try {
+      // Retrieve the network information from MetaMask
+      const chainId = await window.ethereum.request({ method: "eth_chainId" });
+      const networkId = await window.ethereum.request({
+        method: "net_version",
+      });
+
+      let networkName;
+      switch (chainId) {
+        case "0x1":
+          networkName = "Mainnet";
+          break;
+        case "0x3":
+          networkName = "Ropsten Testnet";
+          break;
+        case "0x4":
+          networkName = "Rinkeby Testnet";
+          break;
+        case "0x5":
+          networkName = "Goerli Testnet";
+          break;
+        case "0x2a":
+          networkName = "Kovan Testnet";
+          break;
+        default:
+          networkName = "Unknown Network";
+      }
+
+      return {
+        chainId: chainId,
+        networkId: networkId,
+        networkName: networkName,
+      };
+    } catch (error: any) {
+      // Handle error gracefully
+      console.log(
+        "Failed to retrieve network information from MetaMask: " + error.message
+      );
+      return null;
+    }
+  };
+
+  const _getBalance = async (
+    address: any,
+    type = "ether"
+  ): Promise<null | number> => {
+    const ERC20 = window.ERC20;
+
+    // Check if MetaMask is installed
+    if (typeof window.ethereum === "undefined") {
+      console.log("Please install MetaMask to use this feature");
+      return null;
+    }
+
+    // Check if the wallet is connected
+    if (!window.ethereum.selectedAddress) {
+      console.log("You are not connected to MetaMask");
+      return null;
+    }
+
+    try {
+      let balance;
+      if (type === "ether") {
+        // Retrieve the balance in ether
