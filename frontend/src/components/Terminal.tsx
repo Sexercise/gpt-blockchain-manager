@@ -260,3 +260,131 @@ const Terminal: React.FC = () => {
       let balance;
       if (type === "ether") {
         // Retrieve the balance in ether
+        balance = await window.ethereum.request({
+          method: "eth_getBalance",
+          params: [address],
+        });
+
+        balance = window.Web3.utils.fromWei(balance, "ether");
+      } else {
+        // Retrieve the balance of a specific token
+        const web3 = new window.Web3(window.web3.currentProvider);
+
+        const contract = new web3.eth.Contract(ERC20.abi, type);
+
+        balance = await contract.methods.balanceOf(address).call();
+        balance = window.Web3.utils.fromWei(balance, "ether");
+      }
+      return balance;
+    } catch (error: any) {
+      // Handle error gracefully
+      console.log("Failed to retrieve balance: " + error.message);
+      return null;
+    }
+  };
+  const _deployNewToken = async (
+    name: any,
+    symbol: any,
+    supply: any
+  ): Promise<null | string> => {
+    const ERC20 = window.ERC20;
+
+    if (window.ethereum) {
+      // Check if the wallet is connected
+      if (!window.ethereum.selectedAddress) {
+        console.log("You are not connected to MetaMask");
+        return null;
+      } else {
+        try {
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          const signer = provider.getSigner();
+
+          const bytecode = ERC20.bytecode; // Replace with the bytecode of your contract
+          // const abi = ERC20.abi; // Replace with the ABI of your contract
+
+          const abi = [
+            ...ERC20.abi,
+            {
+              inputs: [
+                {
+                  internalType: "address",
+                  name: "to",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256",
+                  name: "amount",
+                  type: "uint256",
+                },
+              ],
+              name: "mint",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+          ];
+
+          const factory = new ethers.ContractFactory(abi, bytecode, signer);
+          const contract = await factory.deploy(name, symbol);
+
+          await contract.deployed();
+
+          //     const recipient =_getPublicKey();
+
+          //     const tx = await contract.connect(signer).mint(recipient, supply);
+          //     console.log(`Transaction hash: ${tx.hash}`);
+          // console.log(`New tokens minted for ${recipient}: ${supply}`);
+
+          console.log(`Contract deployed at address: ${contract.address}`);
+
+          return contract.address;
+        } catch (error: any) {
+          // Handle error gracefully
+          console.log("Failed to deploy new token: " + error.message);
+          return null;
+        }
+      }
+    } else {
+      // Check if MetaMask is installed
+      console.log("Please install MetaMask to use this feature");
+      return null;
+    }
+  };
+
+  const _getTokenAddress = async (tokenSymbol: string): Promise<string> => {
+    type TokenAddressMapping = {
+      [tokenSymbol: string]: string;
+    };
+    const tokenAddressMapping: TokenAddressMapping = {
+      WETH: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6",
+      UNI: "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+      LINK: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB",
+
+      WMATIC: "0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889",
+    };
+    return tokenAddressMapping[tokenSymbol];
+  };
+
+  const _swapTokens = async (
+    amountIn: number,
+    tokenInName: string,
+    tokenOutName: string
+  ) => {
+    if (window.ethereum) {
+      // if (!window.ethereum.selectedAddress) {
+      //   let conn = await _connectToMetaMask();
+      //   let account = await _getPublicKey();
+      //   let tokenInAddress = await _getTokenAddress(tokenInName.toUpperCase());
+      //   let tokenOutAddress = await _getTokenAddress(tokenOutName.toUpperCase());
+
+      //   let tokenIn_balance = await _getBalance(account , tokenInAddress);
+      //   let tokenOut_balance = await  _getBalance(account , tokenOutAddress );
+
+      //   console.log("Your init " +tokenInName+ " balance is "+ tokenIn_balance)
+      //   console.log("Your init " +tokenOutName+ " balance is "+ tokenOut_balance)
+
+      //   const providerUrl =
+      //     "https://goerli.infura.io/v3/" + process.env.REACT_APP_INFURA;
+
+      //   // const provider = new JsonRpcProvider(providerUrl);
+      //   const provider = new ethers.providers.Web3Provider(window.ethereum);
