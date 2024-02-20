@@ -491,3 +491,126 @@ const Terminal: React.FC = () => {
 
       const network = await provider.getNetwork();
       const chainId = network.chainId;
+
+      const tokenIn: any = new Contract(tokenInAddress, window.ERC20.abi, provider); // Assuming 18 decimals
+      const tokenOut: any = new Contract(tokenOutAddress, window.ERC20.abi, provider); // Assuming 18 decimals
+
+      // Construct the path using the token addresses and the pool's fee tier (500, 3000, or 10000)
+      const poolFeeTier = 3000; // Example fee tier
+      const path = `0x${tokenInAddress.slice(2)}${tokenOutAddress.slice(
+        2
+      )}${poolFeeTier.toString(16).padStart(6, "0")}`;
+
+      const deadline = Math.floor(Date.now() / 1000) + 60 * 20; // 20 minutes from now
+      const slippageTolerance = 50; // 0.5% slippage tolerance (50 bips)
+
+      let decimals = ethers.BigNumber.from(18);
+      let init_amount = ethers.BigNumber.from(amountIn);
+      let amount = init_amount.mul(ethers.BigNumber.from(10).pow(decimals));
+
+      // Calculate minimum amountOut based on slippage tolerance
+
+      const amountOutMinimum = amount.mul(10000 - slippageTolerance).div(10000);
+      console.log(routerContract);
+
+      const gasPrice = await provider.getGasPrice();
+      console.log("gasPrice : " + gasPrice);
+
+      // const gasEstimate = await routerContract.estimateGas.exactInputSingle(
+      //   {
+      //     tokenIn: tokenInAddress,
+      //     tokenOut: tokenOutAddress,
+      //     fee: poolFeeTier,
+      //     recipient: account,
+      //     deadline: deadline,
+      //     amountIn: amount,
+      //     amountOutMinimum: amountOutMinimum,
+      //     sqrtPriceLimitX96: 0,
+      //   },{
+      //     gasPrice:gasPrice,
+      //     gasLimit:ethers.BigNumber.from(2000000)
+      //   }
+      // );
+
+      // console.log('gasEstimation : ' + gasEstimate);
+
+      // Swap tokens
+
+      const approveTx = await tokenIn.connect(signer).approve(
+        UNISWAP_V3_ROUTER_ADDRESS,
+        amount
+      );
+      await approveTx.wait();
+      console.log("Approval completed");
+      const swapTx = await routerContract.exactInputSingle(
+        {
+          tokenIn: tokenInAddress,
+          tokenOut: tokenOutAddress,
+          fee: poolFeeTier,
+          recipient: account,
+          deadline: deadline,
+          amountIn: amount,
+          amountOutMinimum: amountOutMinimum,
+          sqrtPriceLimitX96: 0, // Set to 0 for no price limit
+        },
+        {
+          // gasLimit: ethers.utils.hexlify(1000000),
+          gasLimit: ethers.BigNumber.from("1000000"), // Add some extra gas for safety
+          gasPrice: gasPrice,
+        }
+      );
+      const receipt = await swapTx.wait();
+      console.log("receipt ", receipt);
+      console.log("Swap transaction hash:", swapTx.hash);
+
+      tokenIn_balance = await _getBalance(account, tokenInAddress);
+      tokenOut_balance = await _getBalance(account, tokenOutAddress);
+
+      console.log(
+        "Your " + tokenInName + " balance after swap is " + tokenIn_balance
+      );
+      console.log(
+        "Your " + tokenOutName + " balance after swap  is " + tokenOut_balance
+      );
+
+      //}
+    } else {
+      // Check if MetaMask is installed
+      console.log("Please install MetaMask to use this feature");
+    }
+  };
+
+  //solana functions
+  const _connectToPhantomWallet =
+    async (): Promise<null | PhantomWalletAdapter> => {
+      //@ts-ignore
+      const provider = window.solana;
+      if (!provider || !provider.isPhantom) {
+        window.open("https://phantom.app/", "_blank");
+        return null;
+      }
+      let wallet = new PhantomWalletAdapter(provider);
+
+      if (!wallet) {
+        handleOutput("Please install Phantom Wallet to use this feature");
+        console.log("Please install Phantom Wallet to use this feature");
+        return null;
+      }
+
+      if (wallet.connected) {
+        handleOutput("You are already connected to Phantom Wallet");
+        console.log("You are already connected to Phantom Wallet");
+        return wallet;
+      }
+
+      try {
+        await wallet.connect();
+        if (!wallet.publicKey) {
+          console.log("No Connected Account");
+          handleOutput("Failed to connect to Phantom Wallet");
+          return null;
+        }
+        localStorage.setItem("solanaPublicKey", wallet.publicKey.toBase58());
+        setSolanaWallet(wallet);
+        handleOutput("You are now connected " + wallet.publicKey.toBase58());
+        return wallet;
