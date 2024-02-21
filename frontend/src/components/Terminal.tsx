@@ -614,3 +614,124 @@ const Terminal: React.FC = () => {
         setSolanaWallet(wallet);
         handleOutput("You are now connected " + wallet.publicKey.toBase58());
         return wallet;
+      } catch (error: any) {
+        console.log("Failed to connect to Phantom Wallet: " + error.message);
+        handleOutput("Failed to connect to Phantom Wallet: " + error.message);
+        return null;
+      }
+    };
+
+  const _disconnectFromPhantomWallet = async (): Promise<null | string> => {
+    if (!solanaWallet || !solanaWallet.connected || !solanaWallet.publicKey) {
+      console.log("This Phantom Wallet is not connected");
+      handleOutput(
+        "This Phantom Wallet is not connected, please connect first"
+      );
+      return null;
+    }
+
+    try {
+      await solanaWallet.disconnect();
+      localStorage.removeItem("solanaPublicKey");
+      console.log("You have successfully disconnected from Phantom Wallet");
+      handleOutput("You have successfully disconnected from Phantom Wallet");
+      return "success";
+    } catch (error: any) {
+      console.log("Failed to disconnect from Phantom Wallet: " + error.message);
+      handleOutput(
+        "Failed to disconnect from Phantom Wallet: " + error.message
+      );
+      return null;
+    }
+  };
+
+  const _getSolanaPublicKey = async (): Promise<null | string> => {
+    if (!solanaWallet || !solanaWallet.connected || !solanaWallet.publicKey) {
+      handleOutput("You are not connected to Phantom Wallet");
+      return null;
+    }
+
+    try {
+      handleOutput(solanaWallet.publicKey.toBase58());
+      return solanaWallet.publicKey.toBase58();
+    } catch (error: any) {
+      handleOutput(
+        "Failed to retrieve public key from Phantom Wallet: " + error.message
+      );
+      return null;
+    }
+  };
+
+  const _getSolanaNetworkInfo = async (
+    rpcUrl: string
+  ): Promise<string | null> => {
+    try {
+      if (!rpcUrl) rpcUrl = rpcUrlInitial;
+      let connection = new Connection(rpcUrl);
+      let version: Version = await connection.getVersion();
+      const epochInfo = await connection.getEpochInfo();
+      let endpoint = connection.rpcEndpoint;
+      const networkInfo = {
+        endpoint: endpoint,
+        solanaCore: version["solana-core"],
+        featureSet: version["feature-set"],
+        epoch: epochInfo.epoch,
+      };
+      handleOutput(JSON.stringify(networkInfo));
+      return JSON.stringify(networkInfo);
+    } catch (error: any) {
+      handleOutput("Error while connection to this RPC URL " + error.message);
+      return "Error while connection to this RPC URL " + error.message;
+    }
+  };
+
+  const _getSolanaBalance = async (address: string): Promise<null | number> => {
+    try {
+      let connection = new Connection(rpcUrlInitial);
+      const publicKey = address
+        ? new PublicKey(address)
+        : solanaWallet.publicKey;
+      const balance = await connection.getBalance(publicKey);
+      if (!balance || typeof balance != "number") return null;
+      const lamportsToSol = balance / 1e9;
+      handleOutput("Your balance is " + lamportsToSol);
+      return lamportsToSol;
+    } catch (error: any) {
+      return null;
+    }
+  };
+
+  // type CommandWriter = (message?: any, ...optionalParams: any[]) => void;
+
+  // const processServerResponse = async (
+  //   data: string,
+  //   commandWriter: CommandWriter
+  // ): Promise<string> => {
+  //   const codeRegex: RegExp = /```(?:javascript)?\s*([\s\S]*?)\s*```/g;
+  //   const codeMatch: RegExpExecArray | null = codeRegex.exec(data);
+
+  //   if (codeMatch) {
+  //     const scriptContent: string = codeMatch[1].trim();
+  //     const wrappedScript: string = `(async () => { ${scriptContent} })();`;
+
+  //     try {
+  //       let capturedOutput: any;
+  //       const originalConsoleLog: Console["log"] = console.log;
+  //       console.log = commandWriter;
+  //       const result: any = await eval(wrappedScript);
+  //       return capturedOutput;
+  //     } catch (error: any) {
+  //       return `Error: ${error.message} \n script ${scriptContent}`;
+  //     }
+  //   } else {
+  //     commandWriter("This input does not require any specific action.");
+  //     return `${data}\n`;
+  //   }
+  // };
+
+  type CommandWriter = (message?: any, ...optionalParams: any[]) => void;
+
+  const processServerResponse = async (
+    data: string,
+    commandWriter: CommandWriter
+  ): Promise<any[]> => {
