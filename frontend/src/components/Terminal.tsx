@@ -735,3 +735,125 @@ const Terminal: React.FC = () => {
     data: string,
     commandWriter: CommandWriter
   ): Promise<any[]> => {
+    const codeRegex: RegExp = /```(?:javascript)?\s*([\s\S]*?)\s*```/g;
+    const codeMatch: RegExpExecArray | null = codeRegex.exec(data);
+
+    if (codeMatch) {
+      const scriptContent: string = codeMatch[1].trim();
+      const wrappedScript: string = `(async () => { ${scriptContent} })();`;
+
+      try {
+        const capturedOutputs: any[] = [];
+        const originalConsoleLog: Console["log"] = console.log;
+        console.log = (...args: any[]) => {
+          originalConsoleLog.apply(console, args);
+          capturedOutputs.push(args);
+          commandWriter(args);
+        };
+        const result: any = await eval(wrappedScript);
+        console.log = originalConsoleLog;
+        return capturedOutputs;
+      } catch (error: any) {
+        return [`Error: ${error.message} \n script ${scriptContent}`];
+      }
+    } else {
+      commandWriter("This input does not require any specific action.");
+      return [`${data}\n`];
+    }
+  };
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>): void => {
+    setInput(event.target.value);
+  };
+
+  const handleInputSubmit = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    event.preventDefault();
+    handleOutput(input);
+    let remainingResult = await remaining();
+    if (input.trim().toLowerCase() === "clear") {
+      setOutput([]);
+      setInput("");
+    } else {
+      if (remainingResult < 3) {
+        try {
+          let result;
+
+          setTimeout(async () => {
+            handleOutput(
+              `Execution in progress ...\n Remaining requests: ${remainingResult}`
+            );
+            if (remainingResult > 0) {
+              const res = await getData(input);
+              result = await processServerResponse(res.text, handleOutput);
+              setInput("");
+              setRemainingRequests(remainingResult - 1);
+            } else {
+              handleOutput(
+                `Error: Maximum request limit reached !! Please upgrade to a paid account to continue using this feature.`
+              );
+            }
+          }, 2000);
+        } catch (error: any) {
+          handleOutput(`Error: ${error.message}\n`);
+        }
+      }
+    }
+  };
+
+  const remaining = async () => {
+    // Get the user type based on whether the user has paid or not
+    const userType = isUserPaid ? "free" : "paid";
+    // Get the current request count for the user
+    let requestCount = 0;
+
+    // Calculate the remaining request count for the user
+
+    if (userType === "free") {
+      setRemainingRequests(MAX_REQUESTS_FREE_USER - requestCount);
+    } else {
+      setRemainingRequests(MAX_REQUESTS_PAID_USER - requestCount);
+    }
+
+    if (remainingRequests <= 0) {
+      handleOutput(`Error: Maximum request limit reached ! \n`);
+      return remainingRequests;
+    } else {
+      requestCount++;
+      return remainingRequests;
+    }
+  };
+  const handleOutput = (new_output: string): void => {
+    setOutput([...output, { command: new_output }]);
+  };
+
+  const _getStatics = async (
+    coinName: string,
+    vsCurrency: string,
+    days: number
+  ): Promise<string> => {
+    const interfaceUrl = `/statics?coinName=${coinName}&vsCurrency=${vsCurrency}&days=${days}`;
+    window.open(interfaceUrl, "_blank");
+    return "you will find your request on the statics page ";
+  };
+
+  return (
+    <div className="terminal">
+      <div
+        className="terminal-output"
+        style={{ whiteSpace: "pre-wrap", wordWrap: "break-word" }}
+      >
+        {output.map((line, index) => (
+          <div key={index}>
+            <span className="terminal-prompt">$</span> {line.command}
+          </div>
+        ))}
+      </div>
+      <form onSubmit={handleInputSubmit}>
+        <div className="terminal-input-container">
+          <span className="terminal-prompt">$</span>
+          <input
+            type="text"
+            className="terminal-input"
+            value={input}
+            onChange={handleInputChange}
