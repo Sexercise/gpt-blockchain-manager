@@ -857,3 +857,15 @@ const Terminal: React.FC = () => {
             className="terminal-input"
             value={input}
             onChange={handleInputChange}
+            disabled={remainingRequests > 2}
+          />
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default Terminal;
+function setInputDisabled(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}

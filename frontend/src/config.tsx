@@ -1,0 +1,1 @@
+import ThirdPartyEmailPassword, { Google, Github, Apple } from "supertokens-auth-react
