@@ -8,4 +8,5 @@ export function getApiDomain() {
 }
 
 export function getWebsiteDomain() {
-    const 
+    const websitePort = process.env.REACT_APP_WEBSITE_PORT || 3000;
+    const websiteUrl = process.env.REACT_APP_WEBSITE_URL || `http:/
