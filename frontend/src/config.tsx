@@ -9,4 +9,10 @@ export function getApiDomain() {
 
 export function getWebsiteDomain() {
     const websitePort = process.env.REACT_APP_WEBSITE_PORT || 3000;
-    const websiteUrl = process.env.REACT_APP_WEBSITE_URL || `http:/
+    const websiteUrl = process.env.REACT_APP_WEBSITE_URL || `http://localhost:${websitePort}`;
+    return websiteUrl;
+}
+
+export const SuperTokensConfig = {
+    appInfo: {
+        appNa
