@@ -23,4 +23,8 @@ export const SuperTokensConfig = {
     },
     recipeList: [
         ThirdPartyEmailPassword.init({
-   
+            signInAndUpFeature: {
+                providers: [Github.init(), Google.init()],
+
+            },
+        
