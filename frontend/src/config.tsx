@@ -15,4 +15,7 @@ export function getWebsiteDomain() {
 
 export const SuperTokensConfig = {
     appInfo: {
-        appNa
+        appName: "Blockchain Terminal",
+        apiDomain: getApiDomain(),
+        websiteDomain: getWebsiteDomain(),
+        apiBaseP
