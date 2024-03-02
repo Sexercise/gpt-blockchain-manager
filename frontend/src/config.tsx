@@ -18,4 +18,9 @@ export const SuperTokensConfig = {
         appName: "Blockchain Terminal",
         apiDomain: getApiDomain(),
         websiteDomain: getWebsiteDomain(),
-        apiBaseP
+        apiBasePath: "/api/auth",
+        websiteBasePath: "/auth",
+    },
+    recipeList: [
+        ThirdPartyEmailPassword.init({
+   
