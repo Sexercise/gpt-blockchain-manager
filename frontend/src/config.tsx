@@ -27,4 +27,8 @@ export const SuperTokensConfig = {
                 providers: [Github.init(), Google.init()],
 
             },
-        
+        }),
+        Session.init(),
+    ],
+};
+
