@@ -9,4 +9,6 @@ module.exports = function(app:any) {
     '/blockchain',
     createProxyMiddleware(proxy)
   );
-  
+  app.listen(3001);
+
+};
