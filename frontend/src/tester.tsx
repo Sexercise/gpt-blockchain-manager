@@ -9,4 +9,8 @@ const Tester: React.FC = () => {
   return (
     <div>
       <h1>Crypto Tester: </h1>
-        <CryptoPrice ></C
+        <CryptoPrice ></CryptoPrice>
+      <h1> Ethereum Wallet Tester: </h1>
+      <Ethereum></Ethereum>
+    
+      <h1> charts
