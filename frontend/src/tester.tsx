@@ -13,4 +13,7 @@ const Tester: React.FC = () => {
       <h1> Ethereum Wallet Tester: </h1>
       <Ethereum></Ethereum>
     
-      <h1> charts
+      <h1> charts: </h1>
+      <ChartComponentTest></ChartComponentTest>
+      <h1> Solana Wallet Tester: </h1>
+      <Solana></S
