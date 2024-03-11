@@ -16,4 +16,9 @@ const Tester: React.FC = () => {
       <h1> charts: </h1>
       <ChartComponentTest></ChartComponentTest>
       <h1> Solana Wallet Tester: </h1>
-      <Solana></S
+      <Solana></Solana>
+    </div>
+  );
+};
+
+export default Tester;
