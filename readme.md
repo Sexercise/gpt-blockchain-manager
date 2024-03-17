@@ -13,4 +13,5 @@ To get this project up and running, follow the steps below:
 3. Access the Super Token dashboard via this link https://supertokens.com/dashboard-saas
 4. Remember to save your Core connectionURI and Core API key
 
-## Setting up
+## Setting up Social Credentials
+We utilize Google and Github in this project, but Super Token documentation provides guidance 
