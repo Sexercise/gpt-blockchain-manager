@@ -7,4 +7,7 @@ To get this project up and running, follow the steps below:
 
 ## Cloning the project
 2. Clone the project by running the following command in your terminal:
-  * git clone https://github.com/Sexercise/gp
+  * git clone https://github.com/Sexercise/gpt-blockchain-manager
+
+## Creating a Super Token account
+3. Access the Super Token dashboard via this link http
