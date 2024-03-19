@@ -18,4 +18,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * Google : https://support.google.com/workspacemigrate/answer/9222992?hl=en
   * Github :  https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/creating-a-github-app
 
-## Mo
+## Modifying environment files
+3. Navigate to backend/auth, create a .env file and set the following values:
+  * 
