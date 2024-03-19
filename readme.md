@@ -15,4 +15,7 @@ To get this project up and running, follow the steps below:
 
 ## Setting up Social Credentials
 We utilize Google and Github in this project, but Super Token documentation provides guidance for other options. The following links contain step-by-step processes:
-  * Google : https://support.google.com/workspacemigrate/ans
+  * Google : https://support.google.com/workspacemigrate/answer/9222992?hl=en
+  * Github :  https://docs.github.com/en/apps/creating-github-apps/creating-github-apps/creating-a-github-app
+
+## Mo
