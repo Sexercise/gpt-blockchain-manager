@@ -20,4 +20,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
 
 ## Modifying environment files
 3. Navigate to backend/auth, create a .env file and set the following values:
-  * 
+  * URI=  /* Your saved Core connectionURI */
+  * KEY= /* Your saved Core API key */
+  * CLIENT_ID= /* Goo
