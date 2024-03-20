@@ -22,4 +22,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
 3. Navigate to backend/auth, create a .env file and set the following values:
   * URI=  /* Your saved Core connectionURI */
   * KEY= /* Your saved Core API key */
-  * CLIENT_ID= /* Goo
+  * CLIENT_ID= /* Google Client ID */
+  * CLIENT_SECRET=/* Google Client Secret*/
+  * GITHUB_CLIENT= /* Github Client *
