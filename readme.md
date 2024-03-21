@@ -24,4 +24,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * KEY= /* Your saved Core API key */
   * CLIENT_ID= /* Google Client ID */
   * CLIENT_SECRET=/* Google Client Secret*/
-  * GITHUB_CLIENT= /* Github Client *
+  * GITHUB_CLIENT= /* Github Client */
+  * GITHUB_SECRET= /* Github Secret */ 
+4. Now, go to backend/blockchain_gpt, create a .env
