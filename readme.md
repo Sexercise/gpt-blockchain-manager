@@ -26,4 +26,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * CLIENT_SECRET=/* Google Client Secret*/
   * GITHUB_CLIENT= /* Github Client */
   * GITHUB_SECRET= /* Github Secret */ 
-4. Now, go to backend/blockchain_gpt, create a .env
+4. Now, go to backend/blockchain_gpt, create a .env file and set the following value:
+  * API_KEY= /* Chat GPT API Key*/
+5. Finally, go to frontend, create a .en
