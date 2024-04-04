@@ -29,4 +29,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
 4. Now, go to backend/blockchain_gpt, create a .env file and set the following value:
   * API_KEY= /* Chat GPT API Key*/
 5. Finally, go to frontend, create a .env file and set these values:
-  * SKIP_PREFLIGHT_CHECK=true (can be set to 'true' to ignore eslint check or 'fal
+  * SKIP_PREFLIGHT_CHECK=true (can be set to 'true' to ignore eslint check or 'false' to enable it)
+  * REACT_APP_INFURA= /* Your infura key */
+  * REACT_APP_WALLET=/* Your
