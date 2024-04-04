@@ -31,4 +31,8 @@ We utilize Google and Github in this project, but Super Token documentation prov
 5. Finally, go to frontend, create a .env file and set these values:
   * SKIP_PREFLIGHT_CHECK=true (can be set to 'true' to ignore eslint check or 'false' to enable it)
   * REACT_APP_INFURA= /* Your infura key */
-  * REACT_APP_WALLET=/* Your
+  * REACT_APP_WALLET=/* Your wallet address  */
+  * REACT_APP_PRIVATE_KEY=/* Your private key*/
+
+## Running the project
+6. Run the 
