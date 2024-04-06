@@ -35,4 +35,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * REACT_APP_PRIVATE_KEY=/* Your private key*/
 
 ## Running the project
-6. Run the 
+6. Run the following command in your terminal within the project directory:
+  * docker compose build 
+7. After the build co
