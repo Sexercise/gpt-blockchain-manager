@@ -37,4 +37,8 @@ We utilize Google and Github in this project, but Super Token documentation prov
 ## Running the project
 6. Run the following command in your terminal within the project directory:
   * docker compose build 
-7. After the build co
+7. After the build completes, run the following command:
+  * docker compose up
+
+## Usage
+5. Open your browser and use the following UR
