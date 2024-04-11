@@ -45,4 +45,6 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * frontend: http://localhost:3000
   * User Management Dashboard: http://localhost:3001/auth/dashboard
 
-## 
+## Termination
+6. Enter the following command in your terminal to terminate the application:
+  * docker compose down
