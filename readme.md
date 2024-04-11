@@ -41,4 +41,8 @@ We utilize Google and Github in this project, but Super Token documentation prov
   * docker compose up
 
 ## Usage
-5. Open your browser and use the following UR
+5. Open your browser and use the following URLs:
+  * frontend: http://localhost:3000
+  * User Management Dashboard: http://localhost:3001/auth/dashboard
+
+## 
